@@ -8,31 +8,36 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Residencias
+namespace Residencias.Estudiantes
 {
     public partial class Anteproyecto : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Usuario"] != null)
+            if (!this.IsPostBack)
             {
-                string usuariologueado = Session["Usuario"].ToString();
+                this.BindGrid();
             }
-            else
-            {
-                Response.Redirect("/Login.aspx");
-            }
-
-            BindGrid();
         }
 
-        protected void BtnCerrar_Click(object sender, EventArgs e)
+        private void BindGrid()
         {
-            Session.Remove("Usuario");
-            Response.Redirect("/Login.aspx");
+            string constr = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandText = "SELECT Id, Name FROM tblFiles";
+                    cmd.Connection = con;
+                    con.Open();
+                    gvFiles.DataSource = cmd.ExecuteReader();
+                    gvFiles.DataBind();
+                    con.Close();
+                }
+            }
         }
 
-        protected void BtnUpload_Click(object sender, EventArgs e)
+        protected void Upload(object sender, EventArgs e)
         {
             string filename = Path.GetFileName(FileUpload1.PostedFile.FileName);
             string contentType = FileUpload1.PostedFile.ContentType;
@@ -41,10 +46,10 @@ namespace Residencias
                 using (BinaryReader br = new BinaryReader(fs))
                 {
                     byte[] bytes = br.ReadBytes((Int32)fs.Length);
-                    string conectar = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
-                    using (SqlConnection con = new SqlConnection(conectar))
+                    string constr = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+                    using (SqlConnection con = new SqlConnection(constr))
                     {
-                        string query = "insert into tblFiles values (@Name, @ContentType, @Data)";
+                        string query = "INSERT INTO tblFiles VALUES (@Name, @ContentType, @Data)";
                         using (SqlCommand cmd = new SqlCommand(query))
                         {
                             cmd.Connection = con;
@@ -58,24 +63,36 @@ namespace Residencias
                     }
                 }
             }
-            Response.Redirect(Request.RawUrl);
+
+            Response.Redirect(Request.Url.AbsoluteUri);
         }
 
-        private void BindGrid()
+        [System.Web.Services.WebMethod]
+        public static object GetPDF(int fileId)
         {
-            string conectar = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
-            using (SqlConnection con = new SqlConnection(conectar))
+            byte[] bytes;
+            string fileName, contentType;
+            string constr = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(constr))
             {
                 using (SqlCommand cmd = new SqlCommand())
                 {
-                    cmd.CommandText = "select Id, Name from tblFiles";
+                    cmd.CommandText = "SELECT Name, Data, ContentType FROM tblFiles WHERE Id = @Id";
+                    cmd.Parameters.AddWithValue("@Id", fileId);
                     cmd.Connection = con;
                     con.Open();
-                    gvFiles.DataSource = cmd.ExecuteReader();
-                    gvFiles.DataBind();
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        sdr.Read();
+                        bytes = (byte[])sdr["Data"];
+                        contentType = sdr["ContentType"].ToString();
+                        fileName = sdr["Name"].ToString();
+                    }
                     con.Close();
                 }
             }
+
+            return new { FileName = fileName, ContentType = contentType, Data = bytes };
         }
     }
 }

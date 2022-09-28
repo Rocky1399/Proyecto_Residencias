@@ -1,36 +1,23 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Anteproyecto.aspx.cs" Inherits="Residencias.Anteproyecto" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Anteproyecto.aspx.cs" Inherits="Residencias.Estudiantes.Anteproyecto" %>
 
-<!DOCTYPE html>
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link href="../CSS/NavBarE.css" rel="stylesheet" />
-<link href="../CSS/Anteproyecto.css" rel="stylesheet" />
-    <title>Anteproyecto</title>
+<head id="Head1" runat="server">
+    <title></title>
+    <style type="text/css">
+        body { font-family: Arial; font-size: 10pt; }
+        table { border: 1px solid #ccc; border-collapse: collapse; }
+        table th { background-color: #F7F7F7; color: #333; font-weight: bold; }
+        table th, table td { padding: 5px; border: 1px solid #ccc; }
+        #pdf_container { background: #ccc; text-align: center; display: none; padding: 5px; height: 820px; overflow: auto; }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
-
- <div>
- <ul class="topnav">
-  <li><a href="IndexE.aspx">Inicio</a></li>
-  <li><a href="Proceso.aspx">Proceso de solicitud de residencias</a></li>
-  <li><a href="Anteproyecto.aspx">Anteproyecto</a></li>
-  <li class="right"><asp:LinkButton ID="Cerrar" OnClick="BtnCerrar_Click" runat="server">Cerrar sesión</asp:LinkButton></li>
-</ul>
- </div>
-        <div>
-            <h1>Anteproyecto</h1>
-        </div>
-
-        <div>
-        <asp:FileUpload ID="FileUpload1" runat="server"/><br />
-        <asp:Button ID="Subir" runat="server" Text="Subir anteproyecto" OnClick="BtnUpload_Click" />
-         </div>
-
-        <div>
-<asp:GridView ID="gvFiles" runat="server" AutoGenerateColumns="false">
+    <asp:FileUpload ID="FileUpload1" runat="server" />
+    <asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="Upload" />
+    <hr />
+    <asp:GridView ID="gvFiles" runat="server" AutoGenerateColumns="false">
         <Columns>
             <asp:BoundField DataField="Name" HeaderText="File Name" />
             <asp:TemplateField ItemStyle-HorizontalAlign="Center">
@@ -40,12 +27,10 @@
             </asp:TemplateField>
         </Columns>
     </asp:GridView>
-        </div>
-        <hr />
-        <div id="pdf_container">
-        </div>
+    <hr />
+    <div id="pdf_container">
+    </div>
     </form>
-
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf_viewer.min.css"
@@ -56,7 +41,7 @@
                 var fileId = $(this).attr("rel");
                 $.ajax({
                     type: "POST",
-                    url: "CS.aspx/GetPDF",
+                    url: "Anteproyecto.aspx/GetPDF",
                     data: "{fileId: " + fileId + "}",
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
