@@ -107,7 +107,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="Anteproyecto.aspx" />
+    <Content Include="Estudiantes\Anteproyecto.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -131,14 +131,14 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="IndexE.aspx" />
+    <Content Include="Estudiantes\IndexE.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Files\FORMATO PARA LA SOLICITUD DE RESIDENCIAS PROFESIONALES.doc" />
     <Content Include="Files\Reporte evaluacion Anexo XXIX 10.docx" />
     <Content Include="Files\Reporte evaluacion Anexo XXIX 80.docx" />
     <Content Include="Files\SEGUIMIENTO DE PROYECTO DE RESIDENCIAS.doc" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="Proceso.aspx" />
+    <Content Include="Estudiantes\Proceso.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -174,11 +174,11 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Anteproyecto.aspx.cs">
+    <Compile Include="Estudiantes\Anteproyecto.aspx.cs">
       <DependentUpon>Anteproyecto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Anteproyecto.aspx.designer.cs">
+    <Compile Include="Estudiantes\Anteproyecto.aspx.designer.cs">
       <DependentUpon>Anteproyecto.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -214,18 +214,18 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="IndexE.aspx.cs">
+    <Compile Include="Estudiantes\IndexE.aspx.cs">
       <DependentUpon>IndexE.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="IndexE.aspx.designer.cs">
+    <Compile Include="Estudiantes\IndexE.aspx.designer.cs">
       <DependentUpon>IndexE.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Proceso.aspx.cs">
+    <Compile Include="Estudiantes\Proceso.aspx.cs">
       <DependentUpon>Proceso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Proceso.aspx.designer.cs">
+    <Compile Include="Estudiantes\Proceso.aspx.designer.cs">
       <DependentUpon>Proceso.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

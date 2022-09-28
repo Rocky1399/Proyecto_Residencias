@@ -5,8 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link href="CSS/NavBarE.css" rel="stylesheet" />
-<link href="CSS/TablaProceso.css" rel="stylesheet" />
+<link href="../CSS/NavBarE.css" rel="stylesheet" />
+<link href="../CSS/TablaProceso.css" rel="stylesheet" />
     <title>Proceso para solicitar residencias</title>
 </head>
 <body>

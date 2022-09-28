@@ -20,7 +20,7 @@ namespace Residencias
             }
             else
             {
-                Response.Redirect("Login.aspx");
+                Response.Redirect("/Login.aspx");
             }
 
             BindGrid();
@@ -29,7 +29,7 @@ namespace Residencias
         protected void BtnCerrar_Click(object sender, EventArgs e)
         {
             Session.Remove("Usuario");
-            Response.Redirect("Login.aspx");
+            Response.Redirect("/Login.aspx");
         }
 
         protected void BtnUpload_Click(object sender, EventArgs e)
