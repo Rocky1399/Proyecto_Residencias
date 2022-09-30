@@ -74,6 +74,9 @@
     <Content Include="Estudiantes\Anteproyecto.aspx" />
     <Content Include="Estudiantes\IndexE.aspx" />
     <Content Include="Estudiantes\Proceso.aspx" />
+    <Content Include="Estudiantes\Revision1.aspx" />
+    <Content Include="Estudiantes\Revision2.aspx" />
+    <Content Include="Estudiantes\Revision3.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -98,6 +101,27 @@
     </Compile>
     <Compile Include="Estudiantes\Proceso.aspx.designer.cs">
       <DependentUpon>Proceso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Estudiantes\Revision1.aspx.cs">
+      <DependentUpon>Revision1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Estudiantes\Revision1.aspx.designer.cs">
+      <DependentUpon>Revision1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Estudiantes\Revision2.aspx.cs">
+      <DependentUpon>Revision2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Estudiantes\Revision2.aspx.designer.cs">
+      <DependentUpon>Revision2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Estudiantes\Revision3.aspx.cs">
+      <DependentUpon>Revision3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Estudiantes\Revision3.aspx.designer.cs">
+      <DependentUpon>Revision3.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

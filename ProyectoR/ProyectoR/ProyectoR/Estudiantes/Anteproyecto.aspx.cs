@@ -54,6 +54,10 @@ namespace ProyectoR.Estudiantes
 
         protected void Upload(object sender, EventArgs e)
         {
+            if (FileUpload1.HasFile)
+            {
+            if(".pdf" == System.IO.Path.GetExtension(FileUpload1.FileName))
+            {
             string filename = Path.GetFileName(FileUpload1.PostedFile.FileName);
             string contentType = FileUpload1.PostedFile.ContentType;
             using (Stream fs = FileUpload1.PostedFile.InputStream)
@@ -78,8 +82,17 @@ namespace ProyectoR.Estudiantes
                     }
                 }
             }
-
-            Response.Redirect(Request.Url.AbsoluteUri);
+                Response.Redirect(Request.Url.AbsoluteUri);
+            }
+                else
+                {
+                    Response.Write("<script>alert('Debe ingresar un archivo PDF');</script>");
+                }
+            }
+            else
+            {
+                Response.Write("<script>alert('Debe ingresar un archivo PDF');</script>");
+            }
         }
 
         [System.Web.Services.WebMethod]
