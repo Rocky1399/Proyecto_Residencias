@@ -4,9 +4,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <title>Anteproyecto</title>
-<link href="../CSS/Anteproyecto.css" rel="stylesheet" />
 <link href="../CSS/NavBarE.css" rel="stylesheet" />
+    <link href="../CSS/AnteP.css" rel="stylesheet" />
+    <link href="../CSS/Anteproyecto.css" rel="stylesheet" />
 </head>
+
 <body>
     <form id="form1" runat="server">
 
@@ -22,12 +24,14 @@
 </ul>
         </div>
 
-    <asp:FileUpload ID="FileUpload1" runat="server" />
-    <asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="Upload" />
+
+    <h1>Seleccione su anteproyecto a formato PDF y subalo a la pagina</h1>
+    <asp:FileUpload ID="FileUpload1" runat="server" /> <br />
+    <asp:Button ID="btnUpload" runat="server" Text="Subir" OnClick="Upload" class="FileU"/>
     <hr />
     <asp:GridView ID="gvFiles" runat="server" AutoGenerateColumns="false">
         <Columns>
-            <asp:BoundField DataField="Name" HeaderText="File Name" />
+            <asp:BoundField DataField="Name" HeaderText="Nombre del archivo" />
             <asp:TemplateField ItemStyle-HorizontalAlign="Center">
                 <ItemTemplate>
                     <a class="view" href="javascript:;" rel='<%# Eval("Id") %>'>Ver PDF</a>

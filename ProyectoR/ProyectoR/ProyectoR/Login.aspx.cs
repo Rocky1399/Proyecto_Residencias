@@ -19,12 +19,13 @@ namespace ProyectoR
         {
             string conectar = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
             SqlConnection sqlConectar = new SqlConnection(conectar);
-            SqlCommand cmd = new SqlCommand("Select Nombre, Numero_de_control, Psw from tb_alumnos WHERE Numero_de_control= '" + NControltxt.Text + "'AND Psw= '" + Pswtxt.Text + "'", sqlConectar);
+            SqlCommand cmd = new SqlCommand("Select ID, Nombre, Numero_de_control, Psw from tb_alumnos WHERE Numero_de_control= '" + NControltxt.Text + "'AND Psw= '" + Pswtxt.Text + "'", sqlConectar);
             cmd.Connection.Open();
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.Read())
             {
                 Session["Usuario"] = reader["Nombre"].ToString();
+                Session["ID"] = reader["ID"].ToString();
                 Response.Redirect("Estudiantes/IndexE.aspx");
             }
             else

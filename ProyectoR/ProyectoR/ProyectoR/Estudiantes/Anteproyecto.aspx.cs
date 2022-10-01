@@ -27,6 +27,32 @@ namespace ProyectoR.Estudiantes
             {
                 this.BindGrid();
             }
+
+            string constr = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandText = "SELECT COUNT(Id_alumno) AS Valor FROM tb_anteproyecto WHERE Id_alumno ='" + Session["ID"].ToString() + "'";
+                    cmd.Connection = con;
+                    con.Open();
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        sdr.Read();
+                        int valor = Convert.ToInt32(sdr["Valor"].ToString());
+                        if (valor > 0)
+                        {
+                            FileUpload1.Visible = false;
+                            btnUpload.Visible = false;
+                        }
+                        else
+                        {
+                            FileUpload1.Visible = true;
+                            btnUpload.Visible = true;
+                        }
+                    }
+                }
+            }
         }
 
         private void BindGrid()
@@ -36,7 +62,7 @@ namespace ProyectoR.Estudiantes
             {
                 using (SqlCommand cmd = new SqlCommand())
                 {
-                    cmd.CommandText = "SELECT Id, Name FROM tblFiles";
+                    cmd.CommandText = "SELECT Id, Name FROM tb_anteproyecto WHERE Id_alumno='" + Session["ID"].ToString() + "'";
                     cmd.Connection = con;
                     con.Open();
                     gvFiles.DataSource = cmd.ExecuteReader();
@@ -49,6 +75,7 @@ namespace ProyectoR.Estudiantes
         protected void BtnCerrar_Click(object sender, EventArgs e)
         {
             Session.Remove("Usuario");
+            Session.Remove("ID");
             Response.Redirect("/Login.aspx");
         }
 
@@ -68,13 +95,14 @@ namespace ProyectoR.Estudiantes
                     string constr = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
                     using (SqlConnection con = new SqlConnection(constr))
                     {
-                        string query = "INSERT INTO tblFiles VALUES (@Name, @ContentType, @Data)";
+                        string query = "INSERT INTO tb_anteproyecto VALUES (@Name, @ContentType, @Data, @Id_alumno)";
                         using (SqlCommand cmd = new SqlCommand(query))
                         {
                             cmd.Connection = con;
                             cmd.Parameters.AddWithValue("@Name", filename);
                             cmd.Parameters.AddWithValue("@ContentType", contentType);
                             cmd.Parameters.AddWithValue("@Data", bytes);
+                            cmd.Parameters.AddWithValue("@Id_alumno", Session["ID"].ToString());
                             con.Open();
                             cmd.ExecuteNonQuery();
                             con.Close();
@@ -105,7 +133,7 @@ namespace ProyectoR.Estudiantes
             {
                 using (SqlCommand cmd = new SqlCommand())
                 {
-                    cmd.CommandText = "SELECT Name, Data, ContentType FROM tblFiles WHERE Id = @Id";
+                    cmd.CommandText = "SELECT Name, Data, ContentType FROM tb_anteproyecto WHERE Id = @Id";
                     cmd.Parameters.AddWithValue("@Id", fileId);
                     cmd.Connection = con;
                     con.Open();

@@ -24,6 +24,7 @@ namespace ProyectoR.Estudiantes
         protected void BtnCerrar_Click(object sender, EventArgs e)
         {
             Session.Remove("Usuario");
+            Session.Remove("ID");
             Response.Redirect("/Login.aspx");
         }
     }
