@@ -51,6 +51,7 @@ namespace ProyectoR.Estudiantes
                             btnUpload.Visible = true;
                         }
                     }
+                    con.Close();
                 }
             }
         }
