@@ -68,7 +68,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CSS\Anteproyecto.css" />
-    <Content Include="CSS\AnteP.css" />
     <Content Include="CSS\Login.css" />
     <Content Include="CSS\NavBarE.css" />
     <Content Include="CSS\TablaProcesos.css" />

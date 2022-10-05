@@ -39,6 +39,7 @@
             </asp:TemplateField>
         </Columns>
     </asp:GridView>
+    <asp:Button ID="BtnReupload" runat="server" Text="Volver a subir documento" OnClick="Reupload" class="Re"/>
     <hr />
     <div id="pdf_container">
     </div>

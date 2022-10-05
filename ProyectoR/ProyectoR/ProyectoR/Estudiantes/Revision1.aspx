@@ -6,7 +6,6 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link href="../CSS/NavBarE.css" rel="stylesheet" />
-    <link href="../CSS/AnteP.css" rel="stylesheet" />
     <link href="../CSS/Anteproyecto.css" rel="stylesheet" />
     <title>Revision 1</title>
 </head>

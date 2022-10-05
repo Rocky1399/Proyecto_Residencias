@@ -26,6 +26,33 @@ namespace ProyectoR.Estudiantes
             {
                 this.BindGrid();
             }
+
+            string constr = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandText = "SELECT COUNT(Id_alumno) AS Valor FROM tb_revision1 WHERE Id_alumno ='" + Session["ID"].ToString() + "'";
+                    cmd.Connection = con;
+                    con.Open();
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        sdr.Read();
+                        int valor = Convert.ToInt32(sdr["Valor"].ToString());
+                        if (valor > 0)
+                        {
+                            FileUpload1.Visible = false;
+                            btnUpload.Visible = false;
+                        }
+                        else
+                        {
+                            FileUpload1.Visible = true;
+                            btnUpload.Visible = true;
+                        }
+                    }
+                    con.Close();
+                }
+            }
         }
 
         protected void BtnCerrar_Click(object sender, EventArgs e)
