@@ -25,7 +25,7 @@
 
                 <h1>Sube tu documento PDF para tu primera revisión</h1>
  <asp:FileUpload ID="FileUpload1" runat="server" /> <br />
-    <asp:Button ID="btnUpload" runat="server" Text="Subir" OnClick="Upload" class="FileU"/>
+    <asp:Button ID="btnUpload" runat="server" Text="Subir" OnClick="Upload" class="Subir"/>
     <hr />
     <asp:GridView ID="gvFiles" runat="server" AutoGenerateColumns="false">
         <Columns>
@@ -37,6 +37,7 @@
             </asp:TemplateField>
         </Columns>
     </asp:GridView>
+    <asp:Button ID="BtnVolver" runat="server" Text="Volver a subir documento" class="Volver" OnClick="Reupload" />
     <hr />
     <div id="pdf_container">
     </div>

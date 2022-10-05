@@ -43,11 +43,13 @@ namespace ProyectoR.Estudiantes
                         {
                             FileUpload1.Visible = false;
                             btnUpload.Visible = false;
+                            BtnVolver.Visible = true;
                         }
                         else
                         {
                             FileUpload1.Visible = true;
                             btnUpload.Visible = true;
+                            BtnVolver.Visible = false;
                         }
                     }
                     con.Close();
@@ -121,6 +123,24 @@ namespace ProyectoR.Estudiantes
             {
                 Response.Write("<script>alert('Debe ingresar un archivo PDF');</script>");
             }
+        }
+
+        protected void Reupload(object sender, EventArgs e)
+        {
+            string constr = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandText = "DELETE FROM tb_revision1 WHERE id_alumno = '" + Session["ID"].ToString() + "'";
+                    cmd.Connection = con;
+                    con.Open();
+                    gvFiles.DataSource = cmd.ExecuteReader();
+                    gvFiles.DataBind();
+                    con.Close();
+                }
+            }
+            Response.Redirect(Request.Url.AbsoluteUri);
         }
 
         [System.Web.Services.WebMethod]
