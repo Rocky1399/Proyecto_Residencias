@@ -79,6 +79,7 @@
     <Content Include="Estudiantes\Revision2.aspx" />
     <Content Include="Estudiantes\Revision3.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Maestros\IndexM.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -130,6 +131,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\IndexM.aspx.cs">
+      <DependentUpon>IndexM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maestros\IndexM.aspx.designer.cs">
+      <DependentUpon>IndexM.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
