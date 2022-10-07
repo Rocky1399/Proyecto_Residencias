@@ -11,7 +11,15 @@ namespace ProyectoR.Maestros
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Usuario"] != null)
+            {
+                string usuariologueado = Session["Usuario"].ToString();
+                lblBienvenida.Text = "Bienvenido/a maestro" + usuariologueado;
+            }
+            else
+            {
+                Response.Redirect("/Login.aspx");
+            }
         }
     }
 }
