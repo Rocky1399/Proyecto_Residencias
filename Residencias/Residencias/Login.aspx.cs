@@ -26,7 +26,7 @@ namespace Residencias
             if (reader.Read())
             {
                 Session["Usuario"] = reader["Nombre"].ToString();
-                Response.Redirect("IndexE.aspx");
+                Response.Redirect("Estudiantes/IndexE.aspx");
             }
             else
             {

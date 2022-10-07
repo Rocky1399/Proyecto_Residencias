@@ -1,0 +1,99 @@
+﻿body {
+    font-family: Arial;
+    font-size: 10pt;
+}
+
+.Subir {
+    align-items: center;
+    appearance: button;
+    background-color: #0276FF;
+    border-radius: 8px;
+    border-style: none;
+    box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    font-family: "RM Neue",sans-serif;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+    padding: 10px 21px;
+    text-align: center;
+    text-transform: none;
+    transition: color .13s ease-in-out,background .13s ease-in-out,opacity .13s ease-in-out,box-shadow .13s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.Subir:active {
+    background-color: #006AE8;
+}
+
+.Subir:hover {
+    background-color: #1C84FF;
+}
+
+.Volver {
+    background: #FF4742;
+    border: 1px solid #FF4742;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 40px;
+    outline: 0;
+    padding: 12px 14px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+}
+
+    .Volver:hover,
+    .Volver:active {
+        background-color: initial;
+        background-position: 0 0;
+        color: #FF4742;
+    }
+
+    .Volver:active {
+        opacity: .5;
+    }
+
+table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+
+    table th {
+        background-color: #F7F7F7;
+        color: #333;
+        font-weight: bold;
+    }
+
+    table th, table td {
+        padding: 5px;
+        border: 1px solid #ccc;
+    }
+
+#pdf_container {
+    background: #ccc;
+    text-align: center;
+    display: none;
+    padding: 5px;
+    height: 820px;
+    overflow: auto;
+}

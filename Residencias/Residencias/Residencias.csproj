@@ -107,19 +107,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="Anteproyecto.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="CS.aspx" />
     <Content Include="CSS\Anteproyecto.css" />
     <Content Include="CSS\Login.css" />
     <Content Include="CSS\NavBarE.css" />
     <Content Include="CSS\TablaProceso.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Estudiantes\Anteproyecto.aspx" />
+    <Content Include="Estudiantes\Revision1.aspx" />
+    <Content Include="Estudiantes\Revision2.aspx" />
+    <Content Include="Estudiantes\Revision3.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -131,14 +133,14 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="IndexE.aspx" />
+    <Content Include="Estudiantes\IndexE.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Files\FORMATO PARA LA SOLICITUD DE RESIDENCIAS PROFESIONALES.doc" />
     <Content Include="Files\Reporte evaluacion Anexo XXIX 10.docx" />
     <Content Include="Files\Reporte evaluacion Anexo XXIX 80.docx" />
     <Content Include="Files\SEGUIMIENTO DE PROYECTO DE RESIDENCIAS.doc" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="Proceso.aspx" />
+    <Content Include="Estudiantes\Proceso.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -174,13 +176,6 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Anteproyecto.aspx.cs">
-      <DependentUpon>Anteproyecto.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Anteproyecto.aspx.designer.cs">
-      <DependentUpon>Anteproyecto.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -197,13 +192,6 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CS.aspx.cs">
-      <DependentUpon>CS.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CS.aspx.designer.cs">
-      <DependentUpon>CS.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -211,21 +199,49 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Estudiantes\Anteproyecto.aspx.cs">
+      <DependentUpon>Anteproyecto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Estudiantes\Anteproyecto.aspx.designer.cs">
+      <DependentUpon>Anteproyecto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Estudiantes\Revision1.aspx.cs">
+      <DependentUpon>Revision1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Estudiantes\Revision1.aspx.designer.cs">
+      <DependentUpon>Revision1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Estudiantes\Revision2.aspx.cs">
+      <DependentUpon>Revision2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Estudiantes\Revision2.aspx.designer.cs">
+      <DependentUpon>Revision2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Estudiantes\Revision3.aspx.cs">
+      <DependentUpon>Revision3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Estudiantes\Revision3.aspx.designer.cs">
+      <DependentUpon>Revision3.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="IndexE.aspx.cs">
+    <Compile Include="Estudiantes\IndexE.aspx.cs">
       <DependentUpon>IndexE.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="IndexE.aspx.designer.cs">
+    <Compile Include="Estudiantes\IndexE.aspx.designer.cs">
       <DependentUpon>IndexE.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Proceso.aspx.cs">
+    <Compile Include="Estudiantes\Proceso.aspx.cs">
       <DependentUpon>Proceso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Proceso.aspx.designer.cs">
+    <Compile Include="Estudiantes\Proceso.aspx.designer.cs">
       <DependentUpon>Proceso.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -259,8 +275,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Administradores\" />
     <Folder Include="App_Data\" />
     <Folder Include="Javascript\" />
+    <Folder Include="Maestros\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
