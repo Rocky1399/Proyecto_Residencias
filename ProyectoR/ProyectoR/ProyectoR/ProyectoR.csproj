@@ -69,8 +69,10 @@
   <ItemGroup>
     <Content Include="CSS\Anteproyecto.css" />
     <Content Include="CSS\IndexE.css" />
+    <Content Include="CSS\IndexM.css" />
     <Content Include="CSS\Login.css" />
     <Content Include="CSS\NavBarE.css" />
+    <Content Include="CSS\NavBarM.css" />
     <Content Include="CSS\TablaProcesos.css" />
     <Content Include="Estudiantes\Anteproyecto.aspx" />
     <Content Include="Estudiantes\IndexE.aspx" />
@@ -79,7 +81,11 @@
     <Content Include="Estudiantes\Revision2.aspx" />
     <Content Include="Estudiantes\Revision3.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Maestros\AnteproyectoM.aspx" />
     <Content Include="Maestros\IndexM.aspx" />
+    <Content Include="Maestros\Revision1M.aspx" />
+    <Content Include="Maestros\Revision2M.aspx" />
+    <Content Include="Maestros\Revision3M.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -132,12 +138,40 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Maestros\AnteproyectoM.aspx.cs">
+      <DependentUpon>AnteproyectoM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maestros\AnteproyectoM.aspx.designer.cs">
+      <DependentUpon>AnteproyectoM.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Maestros\IndexM.aspx.cs">
       <DependentUpon>IndexM.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Maestros\IndexM.aspx.designer.cs">
       <DependentUpon>IndexM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\Revision1M.aspx.cs">
+      <DependentUpon>Revision1M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maestros\Revision1M.aspx.designer.cs">
+      <DependentUpon>Revision1M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\Revision2M.aspx.cs">
+      <DependentUpon>Revision2M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maestros\Revision2M.aspx.designer.cs">
+      <DependentUpon>Revision2M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\Revision3M.aspx.cs">
+      <DependentUpon>Revision3M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maestros\Revision3M.aspx.designer.cs">
+      <DependentUpon>Revision3M.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

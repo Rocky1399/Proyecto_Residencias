@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link href="../CSS/NavBarE.css" rel="stylesheet" />
     <link href="../CSS/IndexE.css" rel="stylesheet" />
+
     <title>Index</title>
 </head>
 <body>

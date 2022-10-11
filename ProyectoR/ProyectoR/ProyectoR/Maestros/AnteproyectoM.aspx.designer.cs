@@ -11,7 +11,7 @@ namespace ProyectoR.Maestros
 {
 
 
-    public partial class IndexM
+    public partial class AnteproyectoM
     {
 
         /// <summary>
@@ -33,12 +33,12 @@ namespace ProyectoR.Maestros
         protected global::System.Web.UI.WebControls.LinkButton Cerrar;
 
         /// <summary>
-        /// Control lblBienvenida.
+        /// Control gvFiles.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBienvenida;
+        protected global::System.Web.UI.WebControls.GridView gvFiles;
     }
 }

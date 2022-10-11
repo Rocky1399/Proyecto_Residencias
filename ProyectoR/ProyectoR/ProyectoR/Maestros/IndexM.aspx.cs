@@ -14,12 +14,19 @@ namespace ProyectoR.Maestros
             if (Session["Usuario"] != null)
             {
                 string usuariologueado = Session["Usuario"].ToString();
-                lblBienvenida.Text = "Bienvenido/a maestro" + usuariologueado;
+                lblBienvenida.Text = "Bienvenido/a maestr@ " + usuariologueado;
             }
             else
             {
                 Response.Redirect("/Login.aspx");
             }
+        }
+
+        protected void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            Session.Remove("Usuario");
+            Session.Remove("ID");
+            Response.Redirect("/Login.aspx");
         }
     }
 }
