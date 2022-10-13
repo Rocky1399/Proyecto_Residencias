@@ -34,7 +34,7 @@ namespace ProyectoR.Maestros
             {
                 using (SqlCommand cmd = new SqlCommand())
                 {
-                    cmd.CommandText = "SELECT tb_anteproyecto.Id, Name FROM tb_anteproyecto INNER JOIN tb_alumnos ON tb_anteproyecto.Id_alumno = tb_alumnos.ID WHERE ID_AsesorInterno ='" + Session["ID"].ToString() + "'";
+                    cmd.CommandText = "SELECT Nombre,Apellidos, tb_anteproyecto.Id, Name FROM tb_anteproyecto INNER JOIN tb_alumnos ON tb_anteproyecto.Id_alumno = tb_alumnos.ID WHERE ID_AsesorInterno ='" + Session["ID"].ToString() + "'";
                     cmd.Connection = con;
                     con.Open();
                     gvFiles.DataSource = cmd.ExecuteReader();
