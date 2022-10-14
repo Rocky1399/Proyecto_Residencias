@@ -35,6 +35,23 @@ namespace ProyectoR.Maestros
             Response.Redirect("/Login.aspx");
         }
 
+        protected void BindGrid(object sender, EventArgs e)
+        {
+            string constr = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandText = "SELECT tb_revision1.Id, Name FROM tb_revision1 INNER JOIN tb_alumnos ON tb_revision1.Id_alumno = tb_alumnos.ID WHERE ID_AsesorInterno = " + Session["ID"].ToString() +" AND  CONCAT(Nombre, ' ', Apellidos)  = '" + DropDownList1.SelectedValue + "'";
+                    cmd.Connection = con;
+                    con.Open();
+                    gvFiles.DataSource = cmd.ExecuteReader();
+                    gvFiles.DataBind();
+                    con.Close();
+                }
+            }
+        }
+
         protected void LlenarDropDownList()
         {
             using (SqlConnection conn =  new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
@@ -49,5 +66,34 @@ namespace ProyectoR.Maestros
                 DropDownList1.Items.Insert(0, new ListItem("Seleccionar alumno"));
             }
         }
+
+        [System.Web.Services.WebMethod]
+        public static object GetPDF(int fileId)
+        {
+            byte[] bytes;
+            string fileName, contentType;
+            string constr = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandText = "SELECT Name, Data, ContentType FROM tb_revision1 WHERE Id = @Id";
+                    cmd.Parameters.AddWithValue("@Id", fileId);
+                    cmd.Connection = con;
+                    con.Open();
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        sdr.Read();
+                        bytes = (byte[])sdr["Data"];
+                        contentType = sdr["ContentType"].ToString();
+                        fileName = sdr["Name"].ToString();
+                    }
+                    con.Close();
+                }
+            }
+
+            return new { FileName = fileName, ContentType = contentType, Data = bytes };
+        }
+
     }
 }
