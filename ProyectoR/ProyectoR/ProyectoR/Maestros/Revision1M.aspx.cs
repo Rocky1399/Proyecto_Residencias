@@ -12,6 +12,8 @@ namespace ProyectoR.Maestros
 {
     public partial class Revision1M : System.Web.UI.Page
     {
+        int Id = 0;
+        string i = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["Usuario"] != null)
@@ -26,6 +28,25 @@ namespace ProyectoR.Maestros
             {
                 LlenarDropDownList();
             }
+            if (DropDownList1.SelectedValue != "Seleccionar alumno")
+            {
+                lblCalificacion.Visible = true;
+                lblComentario.Visible = true;
+                txtCalificacion.Visible = true;
+                txtComentario.Visible = true;
+                BtnCalificacion.Visible = true;
+                BtnComentario.Visible = true;
+            }
+            else
+            {
+                lblCalificacion.Visible = false;
+                lblComentario.Visible = false;
+                txtCalificacion.Visible = false;
+                txtComentario.Visible = false;
+                BtnCalificacion.Visible = false;
+                BtnComentario.Visible = false;
+            }
+
         }
 
         protected void BtnCerrar_Click(object sender, EventArgs e)
@@ -39,30 +60,32 @@ namespace ProyectoR.Maestros
         {
             if (DropDownList1.Text != "Seleccionar alumno")
             {
-                lblCalificacion.Visible = true;
-                lblComentario.Visible = true;
-                txtCalificacion.Visible = true;
-                txtComentario.Visible = true;
-                BtnCalificacion.Visible = true;
-                BtnComentario.Visible = true;
-
                 string constr = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
                 using (SqlConnection con = new SqlConnection(constr))
                 {
                     using (SqlCommand cmd = new SqlCommand())
                     {
-                        cmd.CommandText = "SELECT tb_revision1.Id, Name FROM tb_revision1 INNER JOIN tb_alumnos ON tb_revision1.Id_alumno = tb_alumnos.ID WHERE ID_AsesorInterno = " + Session["ID"].ToString() + " AND  CONCAT(Nombre, ' ', Apellidos)  = '" + DropDownList1.SelectedValue + "'";
+                        cmd.CommandText = "SELECT tb_revision1.Id, Name, Id_alumno FROM tb_revision1 INNER JOIN tb_alumnos ON tb_revision1.Id_alumno = tb_alumnos.ID WHERE ID_AsesorInterno = " + Session["ID"].ToString() + " AND  CONCAT(Nombre, ' ', Apellidos)  = '" + DropDownList1.SelectedValue + "'";
                         cmd.Connection = con;
                         con.Open();
-                        gvFiles.DataSource = cmd.ExecuteReader();
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        gvFiles.DataSource = reader;
                         gvFiles.DataBind();
                         con.Close();
+                        lblCalificacion.Visible = true;
+                        lblComentario.Visible = true;
+                        txtCalificacion.Visible = true;
+                        txtComentario.Visible = true;
+                        BtnCalificacion.Visible = true;
+                        BtnComentario.Visible = true;
                     }
                 }
             }
 
             else
             {
+                gvFiles.DataSource = null;
+                gvFiles.DataBind();
                 lblCalificacion.Visible = false;
                 lblComentario.Visible = false;
                 txtCalificacion.Visible = false;
@@ -77,7 +100,7 @@ namespace ProyectoR.Maestros
             using (SqlConnection conn =  new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "SELECT CONCAT(Nombre, ' ', Apellidos) AS NombreC FROM tb_alumnos WHERE ID_AsesorInterno = " + Session["ID"].ToString();
+                cmd.CommandText = "SELECT ID, CONCAT(Nombre, ' ', Apellidos) AS NombreC FROM tb_alumnos WHERE ID_AsesorInterno = " + Session["ID"].ToString();
                 cmd.Connection = conn;
                 conn.Open();
                 DropDownList1.DataSource = cmd.ExecuteReader();
@@ -93,12 +116,28 @@ namespace ProyectoR.Maestros
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "UPDATE tb_revision1 SET Comentarios = '" + txtComentario.Text + "' FROM tb_revision1 r INNER JOIN tb_alumnos ON r.Id_alumno = tb_alumnos.ID WHERE ID_AsesorInterno= " + Session["ID"].ToString();
+                cmd.CommandText = "UPDATE tb_revision1 SET Comentarios = '" + txtComentario.Text + "' FROM tb_revision1 r INNER JOIN tb_alumnos ON r.Id_alumno = tb_alumnos.ID WHERE ID_AsesorInterno= " + Session["ID"].ToString() + "AND CONCAT(Nombre, ' ', Apellidos) = '"+DropDownList1.SelectedValue + "'";
                 cmd.Connection = conn;
                 conn.Open();
                 cmd.ExecuteReader();
                 conn.Close();
+                txtComentario.Text = "";
             }
+        }
+
+        protected void SubirCalificacion(object sender, EventArgs e)
+        {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "UPDATE tb_revision1 SET Calificacion = '" + Convert.ToInt32(txtCalificacion.Text) + "' FROM tb_revision1 r INNER JOIN tb_alumnos ON r.Id_alumno = tb_alumnos.ID WHERE ID_AsesorInterno= " + Session["ID"].ToString() + "AND CONCAT(Nombre, ' ', Apellidos) = '" + DropDownList1.SelectedValue + "'";
+                    cmd.Connection = conn;
+                    conn.Open();
+                    cmd.ExecuteReader();
+                    conn.Close();
+                    txtCalificacion.Text = "";
+            }
+
         }
 
         [System.Web.Services.WebMethod]

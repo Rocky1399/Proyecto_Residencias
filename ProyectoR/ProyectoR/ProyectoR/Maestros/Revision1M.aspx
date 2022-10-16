@@ -43,10 +43,12 @@
     <asp:Label ID="lblComentario" runat="server" Text="Comentario"></asp:Label>
     <asp:TextBox ID="txtComentario" runat="server"></asp:TextBox>
     <asp:Button ID="BtnComentario" runat="server" Text="Subir Comentario" class="Subir" OnClick="SubirComentario"/>
+        </div>
     <br />
+        <div>
     <asp:Label ID="lblCalificacion" runat="server" Text="Calificacion"></asp:Label>
-    <asp:TextBox ID="txtCalificacion" runat="server"></asp:TextBox>
-    <asp:Button ID="BtnCalificacion" runat="server" Text="Subir Calificacion" class="Subir" />
+    <asp:TextBox ID="txtCalificacion" type="number" runat="server"></asp:TextBox>
+    <asp:Button ID="BtnCalificacion" runat="server" Text="Subir Calificacion" class="Subir" OnClick="SubirCalificacion"/>
         </div>
 
     </form>
