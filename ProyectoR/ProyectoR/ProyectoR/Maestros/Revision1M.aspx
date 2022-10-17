@@ -22,7 +22,8 @@
 </ul>
         </div>
 
-
+        <h1>Revision 1</h1>
+        <h4>Seleccione al alumno</h4>
         <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="BindGrid"></asp:DropDownList>
     <hr />
     <asp:GridView ID="gvFiles" runat="server" AutoGenerateColumns="false">
@@ -38,7 +39,7 @@
     <hr />
     <div id="pdf_container">
     </div>
-
+                <br />
         <div>
     <asp:Label ID="lblComentario" runat="server" Text="Comentario"></asp:Label>
     <asp:TextBox ID="txtComentario" runat="server"></asp:TextBox>
