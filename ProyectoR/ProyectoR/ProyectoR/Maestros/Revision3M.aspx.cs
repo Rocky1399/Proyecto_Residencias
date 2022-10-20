@@ -33,6 +33,7 @@ namespace ProyectoR.Maestros
                 txtComentario.Visible = true;
                 BtnCalificacion.Visible = true;
                 BtnComentario.Visible = true;
+                BtnLiberar.Visible= true;
             }
             else
             {
@@ -42,6 +43,7 @@ namespace ProyectoR.Maestros
                 txtComentario.Visible = false;
                 BtnCalificacion.Visible = false;
                 BtnComentario.Visible = false;
+                BtnLiberar.Visible = false;
             }
 
         }
@@ -75,6 +77,18 @@ namespace ProyectoR.Maestros
                         txtComentario.Visible = true;
                         BtnCalificacion.Visible = true;
                         BtnComentario.Visible = true;
+                        BtnLiberar.Visible = true;
+
+                        if (gvFiles == null || gvFiles.Rows.Count == 0)
+                        {
+                            lblCalificacion.Visible = false;
+                            lblComentario.Visible = false;
+                            txtCalificacion.Visible = false;
+                            txtComentario.Visible = false;
+                            BtnCalificacion.Visible = false;
+                            BtnComentario.Visible = false;
+                            BtnLiberar.Visible = false;
+                        }
                     }
                 }
             }
@@ -89,6 +103,7 @@ namespace ProyectoR.Maestros
                 txtComentario.Visible = false;
                 BtnCalificacion.Visible = false;
                 BtnComentario.Visible = false;
+                BtnLiberar.Visible= false;
             }
         }
 
@@ -136,6 +151,19 @@ namespace ProyectoR.Maestros
             }
         }
 
+        protected void LiberarDocumento(object sender, EventArgs e)
+        {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "UPDATE tb_revision3 SET Liberado = 'Liberado' FROM tb_revision3 r INNER JOIN tb_alumnos ON r.Id_alumno = tb_alumnos.ID WHERE ID_AsesorInterno = " + Session["ID"].ToString() + "AND CONCAT(Nombre, ' ', Apellidos) = '" +DropDownList1.SelectedValue + "'";
+                cmd.Connection = conn;
+                conn.Open();
+                cmd.ExecuteReader();
+                conn.Close();
+            }
+        }
+
         [System.Web.Services.WebMethod]
         public static object GetPDF(int fileId)
         {
@@ -160,7 +188,6 @@ namespace ProyectoR.Maestros
                     con.Close();
                 }
             }
-
             return new { FileName = fileName, ContentType = contentType, Data = bytes };
         }
 
