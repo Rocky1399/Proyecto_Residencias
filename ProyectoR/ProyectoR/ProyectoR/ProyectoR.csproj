@@ -67,6 +67,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Administradores\AnteproyectoA.aspx" />
+    <Content Include="Administradores\IndexA.aspx" />
     <Content Include="CSS\Anteproyecto.css" />
     <Content Include="CSS\IndexE.css" />
     <Content Include="CSS\IndexM.css" />
@@ -89,6 +91,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administradores\AnteproyectoA.aspx.cs">
+      <DependentUpon>AnteproyectoA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administradores\AnteproyectoA.aspx.designer.cs">
+      <DependentUpon>AnteproyectoA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administradores\IndexA.aspx.cs">
+      <DependentUpon>IndexA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administradores\IndexA.aspx.designer.cs">
+      <DependentUpon>IndexA.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Estudiantes\Anteproyecto.aspx.cs">
       <DependentUpon>Anteproyecto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
