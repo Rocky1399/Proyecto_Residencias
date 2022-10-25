@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="Administradores\AnteproyectoA.aspx" />
     <Content Include="Administradores\IndexA.aspx" />
+    <Content Include="Administradores\Revision1A.aspx" />
     <Content Include="CSS\Anteproyecto.css" />
     <Content Include="CSS\IndexE.css" />
     <Content Include="CSS\IndexM.css" />
@@ -104,6 +105,13 @@
     </Compile>
     <Compile Include="Administradores\IndexA.aspx.designer.cs">
       <DependentUpon>IndexA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administradores\Revision1A.aspx.cs">
+      <DependentUpon>Revision1A.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administradores\Revision1A.aspx.designer.cs">
+      <DependentUpon>Revision1A.aspx</DependentUpon>
     </Compile>
     <Compile Include="Estudiantes\Anteproyecto.aspx.cs">
       <DependentUpon>Anteproyecto.aspx</DependentUpon>
