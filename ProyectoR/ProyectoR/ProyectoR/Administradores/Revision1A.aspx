@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Revision3M.aspx.cs" Inherits="ProyectoR.Maestros.Revision3M" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Revision1A.aspx.cs" Inherits="ProyectoR.Administradores.Revision1A" %>
 
 <!DOCTYPE html>
 
@@ -13,16 +13,16 @@
     <form id="form1" runat="server">
         <div>
  <ul class="topnav">
-  <li><a href="IndexM.aspx">Inicio</a></li>
-  <li><a href="AnteproyectoM.aspx">Anteproyecto</a></li>
-  <li><a href="Revision1M.aspx">Revisión 1</a></li>
-  <li><a href="Revision2M.aspx">Revisión 2</a></li>
-  <li><a href="Revision3M.aspx">Revisión 3</a></li>
+  <li><a href="IndexA.aspx">Inicio</a></li>
+  <li><a href="AnteproyectoA.aspx">Anteproyecto</a></li>
+  <li><a href="Revision1A.aspx">Revisión 1</a></li>
+  <li><a href="Revision2A.aspx">Revisión 2</a></li>
+  <li><a href="Revision3A.aspx">Revisión 3</a></li>
   <li class="right"><asp:LinkButton ID="Cerrar" OnClick="BtnCerrar_Click" runat="server">Cerrar sesión</asp:LinkButton></li>
 </ul>
         </div>
 
-         <h1>Revision 3</h1>
+        <h1>Revision 1</h1>
         <h4>Seleccione al alumno</h4>
         <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="BindGrid"></asp:DropDownList>
     <hr />
@@ -40,18 +40,6 @@
     <div id="pdf_container">
     </div>
         <br />
-        <div>
-    <asp:Label ID="lblComentario" runat="server" Text="Comentario"></asp:Label>
-    <asp:TextBox ID="txtComentario" runat="server"></asp:TextBox>
-    <asp:Button ID="BtnComentario" runat="server" Text="Subir Comentario" class="Subir" OnClick="SubirComentario"/>
-        </div>
-    <br />
-        <div>
-    <asp:Label ID="lblCalificacion" runat="server" Text="Calificacion"></asp:Label>
-    <asp:TextBox ID="txtCalificacion" type="number" runat="server"></asp:TextBox>
-    <asp:Button ID="BtnCalificacion" runat="server" Text="Subir Calificacion" class="Subir" OnClick="SubirCalificacion"/>
-        </div>
-        <br />
         <asp:Button ID="BtnLiberar" runat="server" Text="Liberar documento" OnClick="LiberarDocumento" class="Subir" />
     </form>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
@@ -64,7 +52,7 @@
                 var fileId = $(this).attr("rel");
                 $.ajax({
                     type: "POST",
-                    url: "Revision3M.aspx/GetPDF",
+                    url: "Revision1A.aspx/GetPDF",
                     data: "{fileId: " + fileId + "}",
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",

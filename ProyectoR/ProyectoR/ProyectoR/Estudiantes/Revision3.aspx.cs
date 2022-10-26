@@ -43,7 +43,6 @@ namespace ProyectoR.Estudiantes
                         {
                             FileUpload1.Visible = false;
                             btnUpload.Visible = false;
-                            BtnVolver.Visible = true;
                         }
                         else
                         {
@@ -77,6 +76,36 @@ namespace ProyectoR.Estudiantes
                     gvFiles.DataSource = cmd.ExecuteReader();
                     gvFiles.DataBind();
                     con.Close();
+                }
+            }
+
+            if (gvFiles == null || gvFiles.Rows.Count == 0)
+            {
+
+            }
+            else
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.CommandText = "SELECT Liberado FROM tb_revision3 WHERE Id_alumno = '" + Session["ID"].ToString() + "'";
+                        cmd.Connection = con;
+                        con.Open();
+                        using (SqlDataReader sdr = cmd.ExecuteReader())
+                        {
+                            sdr.Read(); ;
+                            if (sdr["Liberado"].ToString() == "Liberado")
+                            {
+                                BtnVolver.Visible = true;
+                            }
+                            else
+                            {
+                                BtnVolver.Visible = false;
+                            }
+                        }
+                        con.Close();
+                    }
                 }
             }
         }

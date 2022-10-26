@@ -1,33 +1,35 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Revision3M.aspx.cs" Inherits="ProyectoR.Maestros.Revision3M" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AnteproyectoA.aspx.cs" Inherits="ProyectoR.Administradores.AnteproyectoA" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link href="../CSS/Anteproyecto.css" rel="stylesheet" />
-    <link href="../CSS/NavBarM.css" rel="stylesheet" />
-    <title></title>
+     <title>Anteproyecto</title>
+<link href="../CSS/NavBarE.css" rel="stylesheet" />
+    <link href="../CSS/Anteproyecto.css" rel="stylesheet"/>
 </head>
+
 <body>
     <form id="form1" runat="server">
+
         <div>
  <ul class="topnav">
-  <li><a href="IndexM.aspx">Inicio</a></li>
-  <li><a href="AnteproyectoM.aspx">Anteproyecto</a></li>
-  <li><a href="Revision1M.aspx">Revisión 1</a></li>
-  <li><a href="Revision2M.aspx">Revisión 2</a></li>
-  <li><a href="Revision3M.aspx">Revisión 3</a></li>
+  <li><a href="IndexA.aspx">Inicio</a></li>
+  <li><a href="AnteproyectoA.aspx">Anteproyecto</a></li>
+  <li><a href="Revision1A.aspx">Revisión 1</a></li>
+  <li><a href="Revision2A.aspx">Revisión 2</a></li>
+  <li><a href="Revision3A.aspx">Revisión 3</a></li>
   <li class="right"><asp:LinkButton ID="Cerrar" OnClick="BtnCerrar_Click" runat="server">Cerrar sesión</asp:LinkButton></li>
 </ul>
         </div>
 
-         <h1>Revision 3</h1>
-        <h4>Seleccione al alumno</h4>
-        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="BindGrid"></asp:DropDownList>
-    <hr />
+
+    <h1>Seleccione el anteproyecto que desee ver</h1>
     <asp:GridView ID="gvFiles" runat="server" AutoGenerateColumns="false">
         <Columns>
+            <asp:BoundField DataField="Nombre" HeaderText="Nombre del alumno" />
+            <asp:BoundField DataField="Apellidos" HeaderText="Apellidos del alumno" />
             <asp:BoundField DataField="Name" HeaderText="Nombre del archivo" />
             <asp:TemplateField ItemStyle-HorizontalAlign="Center">
                 <ItemTemplate>
@@ -39,20 +41,6 @@
     <hr />
     <div id="pdf_container">
     </div>
-        <br />
-        <div>
-    <asp:Label ID="lblComentario" runat="server" Text="Comentario"></asp:Label>
-    <asp:TextBox ID="txtComentario" runat="server"></asp:TextBox>
-    <asp:Button ID="BtnComentario" runat="server" Text="Subir Comentario" class="Subir" OnClick="SubirComentario"/>
-        </div>
-    <br />
-        <div>
-    <asp:Label ID="lblCalificacion" runat="server" Text="Calificacion"></asp:Label>
-    <asp:TextBox ID="txtCalificacion" type="number" runat="server"></asp:TextBox>
-    <asp:Button ID="BtnCalificacion" runat="server" Text="Subir Calificacion" class="Subir" OnClick="SubirCalificacion"/>
-        </div>
-        <br />
-        <asp:Button ID="BtnLiberar" runat="server" Text="Liberar documento" OnClick="LiberarDocumento" class="Subir" />
     </form>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
@@ -64,7 +52,7 @@
                 var fileId = $(this).attr("rel");
                 $.ajax({
                     type: "POST",
-                    url: "Revision3M.aspx/GetPDF",
+                    url: "AnteproyectoA.aspx/GetPDF",
                     data: "{fileId: " + fileId + "}",
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",

@@ -51,7 +51,8 @@
     <asp:TextBox ID="txtCalificacion" type="number" runat="server"></asp:TextBox>
     <asp:Button ID="BtnCalificacion" runat="server" Text="Subir Calificacion" class="Subir" OnClick="SubirCalificacion"/>
         </div>
-
+        <br />
+        <asp:Button ID="BtnLiberar" runat="server" Text="Liberar documento" OnClick="LiberarDocumento" class="Subir" />
     </form>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
