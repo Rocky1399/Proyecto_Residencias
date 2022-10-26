@@ -89,6 +89,7 @@ namespace ProyectoR.Administradores
                                 BtnLiberar.Visible = true;
                             }
                         }
+                        con.Close();
                     }
                 }
             }

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Revision1A.aspx.cs" Inherits="ProyectoR.Administradores.Revision1A" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Revision2A.aspx.cs" Inherits="ProyectoR.Administradores.Revision2A" %>
 
 <!DOCTYPE html>
 
@@ -22,7 +22,7 @@
 </ul>
         </div>
 
-        <h1>Revision 1</h1>
+        <h1>Revision 2</h1>
         <h4>Seleccione al alumno</h4>
         <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="BindGrid"></asp:DropDownList>
     <hr />
@@ -52,7 +52,7 @@
                 var fileId = $(this).attr("rel");
                 $.ajax({
                     type: "POST",
-                    url: "Revision1A.aspx/GetPDF",
+                    url: "Revision2A.aspx/GetPDF",
                     data: "{fileId: " + fileId + "}",
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",

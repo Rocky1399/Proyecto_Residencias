@@ -90,6 +90,32 @@ namespace ProyectoR.Maestros
                         }
                     }
                 }
+
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    string dato;
+                    using (SqlCommand cmdB = new SqlCommand())
+                    {
+                        cmdB.CommandText = "SELECT Liberado FROM tb_revision2 INNER JOIN tb_alumnos ON tb_revision2.Id_alumno = tb_alumnos.ID WHERE ID_AsesorInterno = " + Session["ID"].ToString() + " AND CONCAT(Nombre, ' ', Apellidos)  = '" + DropDownList1.SelectedValue + "'";
+                        cmdB.Connection = con;
+                        con.Open();
+                        SqlDataReader readerB = cmdB.ExecuteReader();
+
+                        if (readerB.Read())
+                        {
+                            dato = readerB["Liberado"].ToString();
+                            if (dato == "Liberado")
+                            {
+                                BtnLiberar.Visible = false;
+                            }
+                            else
+                            {
+                                BtnLiberar.Visible = true;
+                            }
+                        }
+                        con.Close();
+                    }
+                }
             }
 
             else
