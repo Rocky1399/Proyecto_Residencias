@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace ProyectoR.Administradores
 {
-    public partial class Revision2A : System.Web.UI.Page
+    public partial class Revision3A : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -51,7 +51,7 @@ namespace ProyectoR.Administradores
                 {
                     using (SqlCommand cmd = new SqlCommand())
                     {
-                        cmd.CommandText = "SELECT tb_revision2.Id, Name, Id_alumno FROM tb_revision2 INNER JOIN tb_alumnos ON tb_revision2.Id_alumno = tb_alumnos.ID WHERE CONCAT(Nombre, ' ', Apellidos)  = '" + DropDownList1.SelectedValue + "'";
+                        cmd.CommandText = "SELECT tb_revision3.Id, Name, Id_alumno FROM tb_revision3 INNER JOIN tb_alumnos ON tb_revision3.Id_alumno = tb_alumnos.ID WHERE CONCAT(Nombre, ' ', Apellidos)  = '" + DropDownList1.SelectedValue + "'";
                         cmd.Connection = con;
                         con.Open();
                         SqlDataReader reader = cmd.ExecuteReader();
@@ -72,7 +72,7 @@ namespace ProyectoR.Administradores
                     string dato;
                     using (SqlCommand cmdB = new SqlCommand())
                     {
-                        cmdB.CommandText = "SELECT Liberado FROM tb_revision2 INNER JOIN tb_alumnos ON tb_revision2.Id_alumno = tb_alumnos.ID WHERE CONCAT(Nombre, ' ', Apellidos)  = '" + DropDownList1.SelectedValue + "'";
+                        cmdB.CommandText = "SELECT Liberado FROM tb_revision3 INNER JOIN tb_alumnos ON tb_revision3.Id_alumno = tb_alumnos.ID WHERE CONCAT(Nombre, ' ', Apellidos)  = '" + DropDownList1.SelectedValue + "'";
                         cmdB.Connection = con;
                         con.Open();
                         SqlDataReader readerB = cmdB.ExecuteReader();
@@ -123,7 +123,7 @@ namespace ProyectoR.Administradores
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "UPDATE tb_revision2 SET Liberado = 'Liberado' FROM tb_revision2 r INNER JOIN tb_alumnos ON r.Id_alumno = tb_alumnos.ID WHERE CONCAT(Nombre, ' ', Apellidos) = '" + DropDownList1.SelectedValue + "'";
+                cmd.CommandText = "UPDATE tb_revision3 SET Liberado = 'Liberado' FROM tb_revision3 r INNER JOIN tb_alumnos ON r.Id_alumno = tb_alumnos.ID WHERE CONCAT(Nombre, ' ', Apellidos) = '" + DropDownList1.SelectedValue + "'";
                 cmd.Connection = conn;
                 conn.Open();
                 cmd.ExecuteReader();
@@ -141,7 +141,7 @@ namespace ProyectoR.Administradores
             {
                 using (SqlCommand cmd = new SqlCommand())
                 {
-                    cmd.CommandText = "SELECT Name, Data, ContentType FROM tb_revision2 WHERE Id = @Id";
+                    cmd.CommandText = "SELECT Name, Data, ContentType FROM tb_revision3 WHERE Id = @Id";
                     cmd.Parameters.AddWithValue("@Id", fileId);
                     cmd.Connection = con;
                     con.Open();
