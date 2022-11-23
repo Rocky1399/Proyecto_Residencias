@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Administradores\AnteproyectoA.aspx" />
+    <Content Include="Administradores\AsignarAsesorInterno.aspx" />
     <Content Include="Administradores\IndexA.aspx" />
     <Content Include="Administradores\Revision1A.aspx" />
     <Content Include="Administradores\Revision2A.aspx" />
@@ -100,6 +101,13 @@
     </Compile>
     <Compile Include="Administradores\AnteproyectoA.aspx.designer.cs">
       <DependentUpon>AnteproyectoA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administradores\AsignarAsesorInterno.aspx.cs">
+      <DependentUpon>AsignarAsesorInterno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administradores\AsignarAsesorInterno.aspx.designer.cs">
+      <DependentUpon>AsignarAsesorInterno.aspx</DependentUpon>
     </Compile>
     <Compile Include="Administradores\IndexA.aspx.cs">
       <DependentUpon>IndexA.aspx</DependentUpon>

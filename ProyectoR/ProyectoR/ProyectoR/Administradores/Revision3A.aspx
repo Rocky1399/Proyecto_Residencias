@@ -14,6 +14,7 @@
         <div>
  <ul class="topnav">
   <li><a href="IndexA.aspx">Inicio</a></li>
+  <li><a href="AsignarAsesorInterno.aspx">Asignar asesor interno</a></li>
   <li><a href="AnteproyectoA.aspx">Anteproyecto</a></li>
   <li><a href="Revision1A.aspx">Revisión 1</a></li>
   <li><a href="Revision2A.aspx">Revisión 2</a></li>
@@ -22,7 +23,7 @@
 </ul>
         </div>
 
-        <h1>Revision 2</h1>
+        <h1>Revision 3</h1>
         <h4>Seleccione al alumno</h4>
         <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="BindGrid"></asp:DropDownList>
     <hr />
