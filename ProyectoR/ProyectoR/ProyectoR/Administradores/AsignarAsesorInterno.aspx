@@ -25,9 +25,9 @@
 
         <h1>Asignar asesor interno</h1>
         <h4>Seleccione al alumno</h4>
-        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true"></asp:DropDownList>
+        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="Cambio"></asp:DropDownList>
         <h4>Seleccione al asesor interno</h4>
-        <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="true"></asp:DropDownList>
+        <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="true" OnSelectedIndexChanged="Cambio"></asp:DropDownList>
     <hr />
     <asp:GridView ID="gvFiles" runat="server" AutoGenerateColumns="false">
         <Columns>
@@ -43,7 +43,7 @@
     <div id="pdf_container">
     </div>
         <br />
-        <asp:Button ID="BtnAsignar" runat="server" Text="Asignar asesor interno" class="Subir" />
+        <asp:Button ID="BtnAsignar" runat="server" Text="Asignar asesor interno" class="Subir" OnClick="Asignar" />
     </form>
 </body>
 </html>
