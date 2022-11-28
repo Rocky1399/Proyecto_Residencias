@@ -123,7 +123,7 @@ namespace ProyectoR.Administradores
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "UPDATE tb_revision2 SET Liberado = 'Liberado' FROM tb_revision1 r INNER JOIN tb_alumnos ON r.Id_alumno = tb_alumnos.ID WHERE CONCAT(Nombre, ' ', Apellidos) = '" + DropDownList1.SelectedValue + "'";
+                cmd.CommandText = "UPDATE tb_revision2 SET Liberado = 'Liberado' FROM tb_revision2 r INNER JOIN tb_alumnos ON r.Id_alumno = tb_alumnos.ID WHERE CONCAT(Nombre, ' ', Apellidos) = '" + DropDownList1.SelectedValue + "'";
                 cmd.Connection = conn;
                 conn.Open();
                 cmd.ExecuteReader();

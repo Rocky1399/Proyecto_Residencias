@@ -160,6 +160,7 @@ namespace ProyectoR.Maestros
                 conn.Close();
                 txtComentario.Text = "";
             }
+            Response.Redirect(Request.Url.AbsoluteUri);
         }
 
         protected void SubirCalificacion(object sender, EventArgs e)
@@ -173,7 +174,8 @@ namespace ProyectoR.Maestros
                     cmd.ExecuteReader();
                     conn.Close();
                     txtCalificacion.Text = "";
-            }
+                }
+            Response.Redirect(Request.Url.AbsoluteUri);
         }
 
         protected void LiberarDocumento(object sender, EventArgs e)

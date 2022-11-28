@@ -23,7 +23,7 @@
 </ul>
         </div>
 
-                <h1>Sube tu documento PDF para tu primera revisión</h1>
+                <h1>Sube tu documento PDF para tu tercera revisión</h1>
  <asp:FileUpload ID="FileUpload1" runat="server" /> <br />
     <asp:Button ID="btnUpload" runat="server" Text="Subir" OnClick="Upload" class="Subir"/>
     <hr />
@@ -115,6 +115,7 @@
         };
     </script>
     <asp:Label ID="LabelComentario" runat="server" Text="Comentario"></asp:Label>
-     <asp:Label ID="Label1" runat="server" Text="Calificacion"></asp:Label>
+    <br />
+     <asp:Label ID="LabelCalificacion" runat="server" Text="Calificacion"></asp:Label>
 </body>
 </html>

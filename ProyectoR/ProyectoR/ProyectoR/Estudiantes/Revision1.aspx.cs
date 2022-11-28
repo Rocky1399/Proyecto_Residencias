@@ -25,6 +25,8 @@ namespace ProyectoR.Estudiantes
             if (!this.IsPostBack)
             {
                 this.BindGrid();
+                this.Texto();
+                this.Calificacion();
             }
 
             string constr = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
@@ -170,6 +172,54 @@ namespace ProyectoR.Estudiantes
                 }
             }
             Response.Redirect(Request.Url.AbsoluteUri);
+        }
+
+        protected void Texto()
+        {
+            string constr = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandText = "SELECT Comentarios FROM tb_revision1 WHERE id_alumno = '" + Session["ID"].ToString() + "'";
+                    cmd.Connection = con;
+                    con.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        LabelComentario.Text = "Comentarios del asesor: " +reader["Comentarios"].ToString();
+                    }
+                    else
+                    {
+                        LabelComentario.Text = "";
+                    }
+                    con.Close();
+                }
+            }
+        }
+
+        protected void Calificacion()
+        {
+            string constr = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandText = "SELECT Calificacion FROM tb_revision1 WHERE id_alumno = '" + Session["ID"].ToString() + "'";
+                    cmd.Connection = con;
+                    con.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        LabelCalificacion.Text = "Calificacion asignada del asesor: " + reader["Calificacion"].ToString();
+                    }
+                    else
+                    {
+                        LabelCalificacion.Text = "";
+                    }
+                    con.Close();
+                }
+            }
         }
 
         [System.Web.Services.WebMethod]
