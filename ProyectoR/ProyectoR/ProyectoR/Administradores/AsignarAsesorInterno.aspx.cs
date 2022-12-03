@@ -28,6 +28,8 @@ namespace ProyectoR.Administradores
                 LlenarDropDownListAlumnos();
                 LlenarDropDownListAsesor();
             }
+            DateTime fecha = DateTime.Now;
+            Label1.Text = fecha.Month.ToString();
         }
 
         protected void BtnCerrar_Click(object sender, EventArgs e)

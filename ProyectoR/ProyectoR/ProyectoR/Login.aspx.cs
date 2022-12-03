@@ -13,7 +13,8 @@ namespace ProyectoR
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Session.Remove("Usuario");
+            Session.Remove("ID");
         }
         protected void BtnLog(object sender, EventArgs e)
 
