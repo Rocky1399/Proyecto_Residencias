@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace ProyectoR.Administradores
 {
-    public partial class AsignarAsesorInterno : System.Web.UI.Page
+    public partial class AsignarRevisores : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -52,7 +52,6 @@ namespace ProyectoR.Administradores
                 conn.Close();
             }
         }
-
         protected void LlenarDropDownListAsesor()
         {
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
@@ -65,29 +64,28 @@ namespace ProyectoR.Administradores
                 DropDownList2.DataSource = cmd.ExecuteReader();
                 DropDownList2.DataTextField = "NombreAs";
                 DropDownList2.DataBind();
-                DropDownList2.Items.Insert(0, new ListItem("Seleccionar asesor"));
+                DropDownList2.Items.Insert(0, new ListItem("Seleccionar revisor"));
+                conn.Close();
+            }
+
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
+            {
+                string a;
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "SELECT ID, CONCAT(Nombre, ' ', Apellido_Paterno, ' ', Apellido_Materno) AS NombreAs FROM tb_asesores_internos";
+                cmd.Connection = conn;
+                conn.Open();
+                DropDownList3.DataSource = cmd.ExecuteReader();
+                DropDownList3.DataTextField = "NombreAs";
+                DropDownList3.DataBind();
+                DropDownList3.Items.Insert(0, new ListItem("Seleccionar revisor"));
                 conn.Close();
             }
         }
 
         protected void Asignar(object sender, EventArgs e)
         {
-            string a = "";
-            int mes = 0;
-            string periodo = "";
-            string año = "";
-            DateTime mess = DateTime.Now;
-            DateTime añoo = DateTime.Now;
-            mes = mess.Month;
-            año = añoo.Year.ToString();
-            if (mes>7)
-            {
-                periodo = "Agosto/Diciembre";
-            }
-            else if (mes <= 6)
-            {
-                periodo = "Enero/Junio";
-            }
+            string a = "",b="";
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand();
@@ -105,30 +103,44 @@ namespace ProyectoR.Administradores
                 }
                 conn.Close();
             }
-
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "UPDATE tb_alumnos SET ID_AsesorInterno ='" + a + "', Periodo = '" + periodo + "',Año ='" + año +"'WHERE CONCAT(Nombre, ' ', Apellidos)= '" +DropDownList1.SelectedValue+"'";
+                cmd.CommandText = "SELECT ID FROM tb_asesores_internos WHERE CONCAT(Nombre, ' ', Apellido_Paterno, ' ', Apellido_Materno) = '" + DropDownList3.SelectedValue + "'";
+                cmd.Connection = conn;
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    b = reader["ID"].ToString();
+                }
+                else
+                {
+
+                }
+                conn.Close();
+            }
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "UPDATE tb_alumnos SET Revisor1 ='" + a + "',Revisor2 ='" + b + "' WHERE CONCAT(Nombre, ' ', Apellidos) = '" + DropDownList1.SelectedValue + "'";
                 cmd.Connection = conn;
                 conn.Open();
                 cmd.ExecuteReader();
                 conn.Close();
             }
-                Response.Redirect(Request.Url.AbsoluteUri);
-         }
-            
-            
+            Response.Redirect(Request.Url.AbsoluteUri);
+        }
 
         protected void Cambio(object sender, EventArgs e)
         {
-            if (DropDownList1.SelectedValue != "Seleccionar alumno" && DropDownList2.SelectedValue != "Seleccionar asesor")
+            if (DropDownList1.SelectedValue != "Seleccionar alumno" && DropDownList2.SelectedValue != "Seleccionar asesor" && DropDownList3.SelectedValue != "Seleccionar revisor")
             {
                 BtnAsignar.Visible = true;
             }
             else
             {
-                
+
             }
         }
     }

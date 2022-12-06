@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="Administradores\AnteproyectoA.aspx" />
     <Content Include="Administradores\AsignarAsesorInterno.aspx" />
+    <Content Include="Administradores\AsignarRevisores.aspx" />
     <Content Include="Administradores\IndexA.aspx" />
     <Content Include="Administradores\Revision1A.aspx" />
     <Content Include="Administradores\Revision2A.aspx" />
@@ -108,6 +109,13 @@
     </Compile>
     <Compile Include="Administradores\AsignarAsesorInterno.aspx.designer.cs">
       <DependentUpon>AsignarAsesorInterno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administradores\AsignarRevisores.aspx.cs">
+      <DependentUpon>AsignarRevisores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administradores\AsignarRevisores.aspx.designer.cs">
+      <DependentUpon>AsignarRevisores.aspx</DependentUpon>
     </Compile>
     <Compile Include="Administradores\IndexA.aspx.cs">
       <DependentUpon>IndexA.aspx</DependentUpon>

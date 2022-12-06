@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AsignarAsesorInterno.aspx.cs" Inherits="ProyectoR.Administradores.AsignarAsesorInterno" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AsignarRevisores.aspx.cs" Inherits="ProyectoR.Administradores.AsignarRevisores" %>
 
 <!DOCTYPE html>
 
@@ -24,11 +24,13 @@
 </ul>
         </div>
 
-        <h1>Asignar asesor interno</h1>
+        <h1>Asignar Revisores</h1>
         <h4>Seleccione al alumno</h4>
         <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="Cambio"></asp:DropDownList>
-        <h4>Seleccione al asesor interno</h4>
+        <h4>Seleccione al primer revisor</h4>
         <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="true" OnSelectedIndexChanged="Cambio"></asp:DropDownList>
+        <h4>Seleccione al segundo revisor</h4>
+        <asp:DropDownList ID="DropDownList3" runat="server" AutoPostBack="true" OnSelectedIndexChanged="Cambio"></asp:DropDownList>
     <hr />
     <hr />
         <br />
