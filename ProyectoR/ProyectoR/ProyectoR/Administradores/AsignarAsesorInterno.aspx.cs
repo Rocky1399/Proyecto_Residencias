@@ -28,8 +28,6 @@ namespace ProyectoR.Administradores
                 LlenarDropDownListAlumnos();
                 LlenarDropDownListAsesor();
             }
-            DateTime fecha = DateTime.Now;
-            Label1.Text = fecha.Month.ToString();
         }
 
         protected void BtnCerrar_Click(object sender, EventArgs e)
@@ -75,6 +73,21 @@ namespace ProyectoR.Administradores
         protected void Asignar(object sender, EventArgs e)
         {
             string a = "";
+            int mes = 0;
+            string periodo = "";
+            string año = "";
+            DateTime mess = DateTime.Now;
+            DateTime añoo = DateTime.Now;
+            mes = mess.Month;
+            año = añoo.Year.ToString();
+            if (mes>7)
+            {
+                periodo = "Agosto/Diciembre";
+            }
+            else if (mes <= 6)
+            {
+                periodo = "Enero/Junio";
+            }
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand();
@@ -96,14 +109,16 @@ namespace ProyectoR.Administradores
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "UPDATE tb_alumnos SET ID_AsesorInterno ='" +a+ "'WHERE CONCAT(Nombre, ' ', Apellidos)= '" +DropDownList1.SelectedValue+"'";
+                cmd.CommandText = "UPDATE tb_alumnos SET ID_AsesorInterno ='" + a + "', Periodo = '" + periodo + "',Año ='" + año +"'WHERE CONCAT(Nombre, ' ', Apellidos)= '" +DropDownList1.SelectedValue+"'";
                 cmd.Connection = conn;
                 conn.Open();
                 cmd.ExecuteReader();
                 conn.Close();
             }
-            Response.Redirect(Request.Url.AbsoluteUri);
-        }
+                Response.Redirect(Request.Url.AbsoluteUri);
+         }
+            
+            
 
         protected void Cambio(object sender, EventArgs e)
         {
