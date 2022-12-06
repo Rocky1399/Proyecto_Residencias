@@ -120,6 +120,21 @@ namespace ProyectoR.Estudiantes
                 {
                     string filename = Path.GetFileName(FileUpload1.PostedFile.FileName);
                     string contentType = FileUpload1.PostedFile.ContentType;
+                    int mes = 0;
+                    string periodo = "";
+                    string año = "";
+                    DateTime mess = DateTime.Now;
+                    DateTime añoo = DateTime.Now;
+                    mes = mess.Month;
+                    año = añoo.Year.ToString();
+                    if (mes > 7)
+                    {
+                        periodo = "Agosto/Diciembre";
+                    }
+                    else if (mes <= 6)
+                    {
+                        periodo = "Enero/Junio";
+                    }
                     using (Stream fs = FileUpload1.PostedFile.InputStream)
                     {
                         using (BinaryReader br = new BinaryReader(fs))
@@ -128,7 +143,7 @@ namespace ProyectoR.Estudiantes
                             string constr = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
                             using (SqlConnection con = new SqlConnection(constr))
                             {
-                                string query = "INSERT INTO tb_revision2 (Name,ContentType,Data,Id_alumno) VALUES (@Name, @ContentType, @Data, @Id_alumno)";
+                                string query = "INSERT INTO tb_revision2 (Name,ContentType,Data,Id_alumno,Periodo,Año) VALUES (@Name, @ContentType, @Data, @Id_alumno,'" + periodo + "','" + año + "')";
                                 using (SqlCommand cmd = new SqlCommand(query))
                                 {
                                     cmd.Connection = con;
