@@ -23,6 +23,8 @@
         </div>
 
         <h1>Revision 1</h1>
+        <h4>Seleccione el periodo que desea revisar</h4>
+        <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="true" OnSelectedIndexChanged="BindGrid"></asp:DropDownList>
         <h4>Seleccione al alumno</h4>
         <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="BindGrid"></asp:DropDownList>
     <hr />

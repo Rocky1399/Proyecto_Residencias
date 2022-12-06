@@ -57,14 +57,14 @@ namespace ProyectoR.Maestros
 
         protected void BindGrid(object sender, EventArgs e)
         {
-            if (DropDownList1.Text != "Seleccionar alumno")
+            if (DropDownList1.Text != "Seleccionar alumno" && DropDownList2.Text != "Seleccionar periodo")
             {
                 string constr = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
                 using (SqlConnection con = new SqlConnection(constr))
                 {
                     using (SqlCommand cmd = new SqlCommand())
                     {
-                        cmd.CommandText = "SELECT tb_revision1.Id, Name, Id_alumno FROM tb_revision1 INNER JOIN tb_alumnos ON tb_revision1.Id_alumno = tb_alumnos.ID WHERE ID_AsesorInterno = " + Session["ID"].ToString() + " AND  CONCAT(Nombre, ' ', Apellidos)  = '" + DropDownList1.SelectedValue + "'";
+                        cmd.CommandText = "SELECT tb_revision1.Id, Name, Id_alumno FROM tb_revision1 INNER JOIN tb_alumnos ON tb_revision1.Id_alumno = tb_alumnos.ID WHERE ID_AsesorInterno = " + Session["ID"].ToString() + " AND  CONCAT(Nombre, ' ', Apellidos)  = '" + DropDownList1.SelectedValue + "' AND CONCAT(tb_revision1.Periodo, ' ',tb_revision1.Año) = '"+ DropDownList2.SelectedValue +"'";
                         cmd.Connection = con;
                         con.Open();
                         SqlDataReader reader = cmd.ExecuteReader();
@@ -96,7 +96,7 @@ namespace ProyectoR.Maestros
                     string dato;
                     using (SqlCommand cmdB = new SqlCommand())
                     {
-                        cmdB.CommandText = "SELECT Liberado FROM tb_revision1 INNER JOIN tb_alumnos ON tb_revision1.Id_alumno = tb_alumnos.ID WHERE ID_AsesorInterno = " + Session["ID"].ToString() + " AND CONCAT(Nombre, ' ', Apellidos)  = '" + DropDownList1.SelectedValue + "'";
+                        cmdB.CommandText = "SELECT Liberado FROM tb_revision1 INNER JOIN tb_alumnos ON tb_revision1.Id_alumno = tb_alumnos.ID WHERE ID_AsesorInterno = " + Session["ID"].ToString() + " AND CONCAT(Nombre, ' ', Apellidos)  = '" + DropDownList1.SelectedValue + "' AND CONCAT(tb_revision1.Periodo, ' ',tb_revision1.Año) = '" + DropDownList2.SelectedValue + "'";
                         cmdB.Connection = con;
                         con.Open();
                         SqlDataReader readerB = cmdB.ExecuteReader();
@@ -146,6 +146,18 @@ namespace ProyectoR.Maestros
                 DropDownList1.Items.Insert(0, new ListItem("Seleccionar alumno"));
                 conn.Close();
             }
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "SELECT DISTINCT CONCAT(Periodo, ' ', Año) AS Periodo FROM tb_alumnos WHERE ID_AsesorInterno = " + Session["ID"].ToString();
+                cmd.Connection = conn;
+                conn.Open();
+                DropDownList2.DataSource = cmd.ExecuteReader();
+                DropDownList2.DataTextField = "Periodo";
+                DropDownList2.DataBind();
+                DropDownList2.Items.Insert(0, new ListItem("Seleccionar periodo"));
+                conn.Close();
+            }
         }
 
         protected void SubirComentario(object sender, EventArgs e)
@@ -153,7 +165,7 @@ namespace ProyectoR.Maestros
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "UPDATE tb_revision1 SET Comentarios = '" + txtComentario.Text + "' FROM tb_revision1 r INNER JOIN tb_alumnos ON r.Id_alumno = tb_alumnos.ID WHERE ID_AsesorInterno= " + Session["ID"].ToString() + "AND CONCAT(Nombre, ' ', Apellidos) = '"+DropDownList1.SelectedValue + "'";
+                cmd.CommandText = "UPDATE tb_revision1 SET Comentarios = '" + txtComentario.Text + "' FROM tb_revision1 r INNER JOIN tb_alumnos ON r.Id_alumno = tb_alumnos.ID WHERE ID_AsesorInterno= " + Session["ID"].ToString() + "AND CONCAT(Nombre, ' ', Apellidos) = '"+DropDownList1.SelectedValue + "' AND CONCAT(tb_revision1.Periodo, ' ',tb_revision1.Año) = '" + DropDownList2.SelectedValue + "'";
                 cmd.Connection = conn;
                 conn.Open();
                 cmd.ExecuteReader();
@@ -168,8 +180,8 @@ namespace ProyectoR.Maestros
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
                 {
                     SqlCommand cmd = new SqlCommand();
-                    cmd.CommandText = "UPDATE tb_revision1 SET Calificacion = '" + Convert.ToInt32(txtCalificacion.Text) + "' FROM tb_revision1 r INNER JOIN tb_alumnos ON r.Id_alumno = tb_alumnos.ID WHERE ID_AsesorInterno= " + Session["ID"].ToString() + "AND CONCAT(Nombre, ' ', Apellidos) = '" + DropDownList1.SelectedValue + "'";
-                    cmd.Connection = conn;
+                    cmd.CommandText = "UPDATE tb_revision1 SET Calificacion = '" + Convert.ToInt32(txtCalificacion.Text) + "' FROM tb_revision1 r INNER JOIN tb_alumnos ON r.Id_alumno = tb_alumnos.ID WHERE ID_AsesorInterno= " + Session["ID"].ToString() + "AND CONCAT(Nombre, ' ', Apellidos) = '" + DropDownList1.SelectedValue + " 'AND CONCAT(tb_revision1.Periodo, ' ',tb_revision1.Año) = '" + DropDownList2.SelectedValue + "'";
+                cmd.Connection = conn;
                     conn.Open();
                     cmd.ExecuteReader();
                     conn.Close();
@@ -183,7 +195,7 @@ namespace ProyectoR.Maestros
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "UPDATE tb_revision1 SET Liberado = 'Liberado' FROM tb_revision1 r INNER JOIN tb_alumnos ON r.Id_alumno = tb_alumnos.ID WHERE ID_AsesorInterno = " + Session["ID"].ToString() + "AND CONCAT(Nombre, ' ', Apellidos) = '" + DropDownList1.SelectedValue + "'";
+                cmd.CommandText = "UPDATE tb_revision1 SET Liberado = 'Liberado' FROM tb_revision1 r INNER JOIN tb_alumnos ON r.Id_alumno = tb_alumnos.ID WHERE ID_AsesorInterno = " + Session["ID"].ToString() + "AND CONCAT(Nombre, ' ', Apellidos) = '" + DropDownList1.SelectedValue + "' AND CONCAT(tb_revision1.Periodo, ' ',tb_revision1.Año) = '" + DropDownList2.SelectedValue + "'";
                 cmd.Connection = conn;
                 conn.Open();
                 cmd.ExecuteReader();

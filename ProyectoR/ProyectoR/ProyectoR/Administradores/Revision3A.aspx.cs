@@ -51,7 +51,7 @@ namespace ProyectoR.Administradores
                 {
                     using (SqlCommand cmd = new SqlCommand())
                     {
-                        cmd.CommandText = "SELECT tb_revision3.Id, Name, Id_alumno FROM tb_revision3 INNER JOIN tb_alumnos ON tb_revision3.Id_alumno = tb_alumnos.ID WHERE CONCAT(Nombre, ' ', Apellidos)  = '" + DropDownList1.SelectedValue + "'";
+                        cmd.CommandText = "SELECT tb_revision3.Id, Name, Id_alumno FROM tb_revision3 INNER JOIN tb_alumnos ON tb_revision3.Id_alumno = tb_alumnos.ID WHERE CONCAT(Nombre, ' ', Apellidos)  = '" + DropDownList1.SelectedValue + "' AND CONCAT(tb_revision3.Periodo, ' ',tb_revision3.Año) = '" + DropDownList2.SelectedValue + "'";
                         cmd.Connection = con;
                         con.Open();
                         SqlDataReader reader = cmd.ExecuteReader();
@@ -72,7 +72,7 @@ namespace ProyectoR.Administradores
                     string dato;
                     using (SqlCommand cmdB = new SqlCommand())
                     {
-                        cmdB.CommandText = "SELECT Liberado FROM tb_revision3 INNER JOIN tb_alumnos ON tb_revision3.Id_alumno = tb_alumnos.ID WHERE CONCAT(Nombre, ' ', Apellidos)  = '" + DropDownList1.SelectedValue + "'";
+                        cmdB.CommandText = "SELECT Liberado FROM tb_revision3 INNER JOIN tb_alumnos ON tb_revision3.Id_alumno = tb_alumnos.ID WHERE CONCAT(Nombre, ' ', Apellidos)  = '" + DropDownList1.SelectedValue + "' AND CONCAT(tb_revision3.Periodo, ' ',tb_revision3.Año) = '" + DropDownList2.SelectedValue + "'";
                         cmdB.Connection = con;
                         con.Open();
                         SqlDataReader readerB = cmdB.ExecuteReader();
@@ -116,6 +116,18 @@ namespace ProyectoR.Administradores
                 DropDownList1.Items.Insert(0, new ListItem("Seleccionar alumno"));
                 conn.Close();
             }
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "SELECT DISTINCT CONCAT(Periodo, ' ', Año) AS Periodo FROM tb_alumnos";
+                cmd.Connection = conn;
+                conn.Open();
+                DropDownList2.DataSource = cmd.ExecuteReader();
+                DropDownList2.DataTextField = "Periodo";
+                DropDownList2.DataBind();
+                DropDownList2.Items.Insert(0, new ListItem("Seleccionar periodo"));
+                conn.Close();
+            }
         }
 
         protected void LiberarDocumento(object sender, EventArgs e)
@@ -123,7 +135,7 @@ namespace ProyectoR.Administradores
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "UPDATE tb_revision3 SET Liberado = 'Liberado' FROM tb_revision3 r INNER JOIN tb_alumnos ON r.Id_alumno = tb_alumnos.ID WHERE CONCAT(Nombre, ' ', Apellidos) = '" + DropDownList1.SelectedValue + "'";
+                cmd.CommandText = "UPDATE tb_revision3 SET Liberado = 'Liberado' FROM tb_revision3 r INNER JOIN tb_alumnos ON r.Id_alumno = tb_alumnos.ID WHERE CONCAT(Nombre, ' ', Apellidos) = '" + DropDownList1.SelectedValue + "' AND CONCAT(tb_revision3.Periodo, ' ',tb_revision3.Año) = '" + DropDownList2.SelectedValue + "'";
                 cmd.Connection = conn;
                 conn.Open();
                 cmd.ExecuteReader();
