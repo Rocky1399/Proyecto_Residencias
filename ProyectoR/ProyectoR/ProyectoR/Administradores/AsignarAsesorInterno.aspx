@@ -15,11 +15,12 @@
  <ul class="topnav">
   <li><a href="IndexA.aspx">Inicio</a></li>
   <li><a href="AsignarAsesorInterno.aspx">Asignar asesor interno</a></li>
+  <li><a href="AsignarRevisores.aspx">Asignar revisores</a></li>
   <li><a href="AnteproyectoA.aspx">Anteproyecto</a></li>
   <li><a href="Revision1A.aspx">Revisión 1</a></li>
   <li><a href="Revision2A.aspx">Revisión 2</a></li>
   <li><a href="Revision3A.aspx">Revisión 3</a></li>
-  <li><a href="AsignarRevisores.aspx">Asignar revisores</a></li>
+  <li><a href="Datos.aspx">Datos de los alumnos</a></li>
   <li class="right"><asp:LinkButton ID="Cerrar" OnClick="BtnCerrar_Click" runat="server">Cerrar sesión</asp:LinkButton></li>
 </ul>
         </div>

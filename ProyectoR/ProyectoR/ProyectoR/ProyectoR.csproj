@@ -70,6 +70,7 @@
     <Content Include="Administradores\AnteproyectoA.aspx" />
     <Content Include="Administradores\AsignarAsesorInterno.aspx" />
     <Content Include="Administradores\AsignarRevisores.aspx" />
+    <Content Include="Administradores\Datos.aspx" />
     <Content Include="Administradores\IndexA.aspx" />
     <Content Include="Administradores\Revision1A.aspx" />
     <Content Include="Administradores\Revision2A.aspx" />
@@ -116,6 +117,13 @@
     </Compile>
     <Compile Include="Administradores\AsignarRevisores.aspx.designer.cs">
       <DependentUpon>AsignarRevisores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administradores\Datos.aspx.cs">
+      <DependentUpon>Datos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administradores\Datos.aspx.designer.cs">
+      <DependentUpon>Datos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Administradores\IndexA.aspx.cs">
       <DependentUpon>IndexA.aspx</DependentUpon>
@@ -232,10 +240,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Files\FORMATO PARA LA SOLICITUD DE RESIDENCIAS PROFESIONALES.doc" />
-    <Content Include="Files\Reporte evaluacion Anexo XXIX 10.docx" />
-    <Content Include="Files\Reporte evaluacion Anexo XXIX 80.docx" />
-    <Content Include="Files\SEGUIMIENTO DE PROYECTO DE RESIDENCIAS.doc" />
+    <Content Include="Files\Formato solicitud residencias.doc" />
+    <Content Include="Files\Reporte evaluacion 10 por ciento.docx" />
+    <Content Include="Files\Reporte evaluacion Anexo 80 por ciento.docx" />
+    <Content Include="Files\Seguimiento proyecto residencias.doc" />
+    <Content Include="Files\Portada Oficial de Residencias.docx" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

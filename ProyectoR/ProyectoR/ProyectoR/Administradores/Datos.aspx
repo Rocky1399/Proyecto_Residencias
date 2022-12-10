@@ -1,12 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AsignarRevisores.aspx.cs" Inherits="ProyectoR.Administradores.AsignarRevisores" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Datos.aspx.cs" Inherits="ProyectoR.Administradores.Datos" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link href="../CSS/Anteproyecto.css" rel="stylesheet" />
     <link href="../CSS/NavBarM.css" rel="stylesheet" />
+    <link href="../CSS/Anteproyecto.css" rel="stylesheet" />
+
     <title></title>
 </head>
 <body>
@@ -24,18 +25,6 @@
   <li class="right"><asp:LinkButton ID="Cerrar" OnClick="BtnCerrar_Click" runat="server">Cerrar sesión</asp:LinkButton></li>
 </ul>
         </div>
-
-        <h1>Asignar Revisores</h1>
-        <h4>Seleccione al alumno</h4>
-        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="Cambio"></asp:DropDownList>
-        <h4>Seleccione al primer revisor</h4>
-        <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="true" OnSelectedIndexChanged="Cambio"></asp:DropDownList>
-        <h4>Seleccione al segundo revisor</h4>
-        <asp:DropDownList ID="DropDownList3" runat="server" AutoPostBack="true" OnSelectedIndexChanged="Cambio"></asp:DropDownList>
-    <hr />
-    <hr />
-        <br />
-        <asp:Button ID="BtnAsignar" runat="server" Text="Asignar asesor interno" class="Subir" OnClick="Asignar" />
     </form>
 </body>
 </html>
