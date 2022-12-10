@@ -15,6 +15,7 @@
  <ul class="topnav">
   <li><a href="IndexE.aspx">Inicio</a></li>
   <li><a href="Proceso.aspx">Proceso de solicitud de residencias</a></li>
+  <li><a href="Datos proyecto.aspx">Datos proyecto</a></li>
   <li><a href="Anteproyecto.aspx">Anteproyecto</a></li>
   <li><a href="Revision1.aspx">Revisión 1</a></li>
   <li><a href="Revision2.aspx">Revisión 2</a></li>

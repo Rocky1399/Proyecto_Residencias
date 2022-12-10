@@ -83,6 +83,7 @@
     <Content Include="CSS\NavBarM.css" />
     <Content Include="CSS\TablaProcesos.css" />
     <Content Include="Estudiantes\Anteproyecto.aspx" />
+    <Content Include="Estudiantes\Datos proyecto.aspx" />
     <Content Include="Estudiantes\IndexE.aspx" />
     <Content Include="Estudiantes\Proceso.aspx" />
     <Content Include="Estudiantes\Revision1.aspx" />
@@ -159,6 +160,13 @@
     </Compile>
     <Compile Include="Estudiantes\Anteproyecto.aspx.designer.cs">
       <DependentUpon>Anteproyecto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Estudiantes\Datos proyecto.aspx.cs">
+      <DependentUpon>Datos proyecto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Estudiantes\Datos proyecto.aspx.designer.cs">
+      <DependentUpon>Datos proyecto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Estudiantes\IndexE.aspx.cs">
       <DependentUpon>IndexE.aspx</DependentUpon>

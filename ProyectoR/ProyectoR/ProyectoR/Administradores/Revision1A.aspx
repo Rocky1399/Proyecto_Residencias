@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link href="../CSS/Anteproyecto.css" rel="stylesheet" />
     <link href="../CSS/NavBarM.css" rel="stylesheet" />
+
     <title></title>
 </head>
 <body>
@@ -27,9 +28,9 @@
 
         <h1>Revision 1</h1>
         <h4>Seleccione el periodo que desea revisar</h4>
-        <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="true" OnSelectedIndexChanged="BindGrid"></asp:DropDownList>
+        <asp:DropDownList ID="DropDownList2" runat="server" class="dropdown" AutoPostBack="true" OnSelectedIndexChanged="BindGrid"></asp:DropDownList>
         <h4>Seleccione al alumno</h4>
-        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="BindGrid"></asp:DropDownList>
+        <asp:DropDownList ID="DropDownList1" runat="server" class="dropdown" AutoPostBack="true" OnSelectedIndexChanged="BindGrid"></asp:DropDownList>
     <hr />
     <asp:GridView ID="gvFiles" runat="server" AutoGenerateColumns="false">
         <Columns>

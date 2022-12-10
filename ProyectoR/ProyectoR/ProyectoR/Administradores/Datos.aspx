@@ -25,6 +25,23 @@
   <li class="right"><asp:LinkButton ID="Cerrar" OnClick="BtnCerrar_Click" runat="server">Cerrar sesión</asp:LinkButton></li>
 </ul>
         </div>
+        <div>
+            <asp:GridView ID="gvFiles" runat="server" AutoGenerateColumns="false">
+        <Columns>
+            <asp:BoundField DataField="Nombre" HeaderText="Nombre del alumno" />
+            <asp:BoundField DataField="Descripcion" HeaderText="Nombre del proyecto" />
+            <asp:BoundField DataField="Empresa" HeaderText="Nombre de la empresa" />
+            <asp:BoundField DataField="Asesor_Externo" HeaderText="Nombre del asesor externo" />
+            <asp:BoundField DataField="Periodo" HeaderText="Periodo" />
+            <asp:BoundField DataField="Año" HeaderText="Año" />
+            <asp:BoundField DataField="Numero_de_control" HeaderText="Numero de control del alumno" />
+            <asp:BoundField DataField="Asesor_Interno_RFC" HeaderText="RFC asesor interno" />
+            <asp:BoundField DataField="Calificacion_Final" HeaderText="Calificacion final" />
+            <asp:BoundField DataField="Revisor1" HeaderText="Revisor 1" />
+            <asp:BoundField DataField="Revisor2" HeaderText="Revisor 2" />
+        </Columns>
+    </asp:GridView>
+        </div>
     </form>
 </body>
 </html>
