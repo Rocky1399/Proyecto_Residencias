@@ -86,6 +86,8 @@ namespace ProyectoR.Administradores
         protected void Asignar(object sender, EventArgs e)
         {
             string a = "",b="";
+            string c = "";
+            //Sacar ID de revisor1
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand();
@@ -103,6 +105,7 @@ namespace ProyectoR.Administradores
                 }
                 conn.Close();
             }
+            //Sacar ID de revisor2
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand();
@@ -120,10 +123,39 @@ namespace ProyectoR.Administradores
                 }
                 conn.Close();
             }
+            //Sacar ID de alumno
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "SELECT ID FROM tb_alumnos WHERE CONCAT(Nombre, ' ', Apellidos) = '" + DropDownList1.SelectedValue + "'";
+                cmd.Connection = conn;
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    c = reader["ID"].ToString();
+                }
+                else
+                {
+
+                }
+                conn.Close();
+            }
+            //Asignacion de revisores en tb_alumnos
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandText = "UPDATE tb_alumnos SET Revisor1 ='" + a + "',Revisor2 ='" + b + "' WHERE CONCAT(Nombre, ' ', Apellidos) = '" + DropDownList1.SelectedValue + "'";
+                cmd.Connection = conn;
+                conn.Open();
+                cmd.ExecuteReader();
+                conn.Close();
+            }
+            //Asignacion de revisores en info_proyectos
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "UPDATE tb_info_proyectos SET Revisor1 ='" + DropDownList2.SelectedValue + "',Revisor2 ='" + DropDownList3.SelectedValue + "' WHERE ID_Alumno = '" + c + "'";
                 cmd.Connection = conn;
                 conn.Open();
                 cmd.ExecuteReader();

@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link href="../CSS/Anteproyecto.css" rel="stylesheet" />
     <link href="../CSS/NavBarM.css" rel="stylesheet" />
-    <title></title>
+    <title>Asignar asesor interno</title>
 </head>
 <body>
     <form id="form1" runat="server">

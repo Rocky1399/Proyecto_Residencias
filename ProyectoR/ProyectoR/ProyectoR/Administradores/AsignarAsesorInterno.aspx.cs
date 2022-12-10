@@ -72,7 +72,8 @@ namespace ProyectoR.Administradores
 
         protected void Asignar(object sender, EventArgs e)
         {
-            string a = "";
+            string a = "", rfc="";
+            string b = "";
             int mes = 0;
             string periodo = "";
             string año = "";
@@ -88,16 +89,18 @@ namespace ProyectoR.Administradores
             {
                 periodo = "Enero/Junio";
             }
+            //Agarrar ID y RFC del maestro seleccionado
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "SELECT ID FROM tb_asesores_internos WHERE CONCAT(Nombre, ' ', Apellido_Paterno, ' ', Apellido_Materno) = '" + DropDownList2.SelectedValue + "'";
+                cmd.CommandText = "SELECT ID,RFC FROM tb_asesores_internos WHERE CONCAT(Nombre, ' ', Apellido_Paterno, ' ', Apellido_Materno) = '" + DropDownList2.SelectedValue + "'";
                 cmd.Connection = conn;
                 conn.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
                     a = reader["ID"].ToString();
+                    rfc = reader["RFC"].ToString();
                 }
                 else
                 {
@@ -105,7 +108,24 @@ namespace ProyectoR.Administradores
                 }
                 conn.Close();
             }
+            //Agarrar ID del alumno seleccionado
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "SELECT ID FROM tb_alumnos WHERE CONCAT(Nombre, ' ', Apellidos) = '" + DropDownList1.SelectedValue + "'";
+                cmd.Connection = conn;
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    b=reader["ID"].ToString();
+                }
+                else
+                {
 
+                }
+                conn.Close();
+            }
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand();
@@ -115,7 +135,17 @@ namespace ProyectoR.Administradores
                 cmd.ExecuteReader();
                 conn.Close();
             }
-                Response.Redirect(Request.Url.AbsoluteUri);
+
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "UPDATE tb_info_proyectos SET Asesor_Interno_RFC ='" +rfc+ "'WHERE ID_Alumno = '"+b+"'";
+                cmd.Connection = conn;
+                conn.Open();
+                cmd.ExecuteReader();
+                conn.Close();
+            }
+            Response.Redirect(Request.Url.AbsoluteUri);
          }
             
             

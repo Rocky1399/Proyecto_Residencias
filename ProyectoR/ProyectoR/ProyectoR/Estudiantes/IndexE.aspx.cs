@@ -26,6 +26,7 @@ namespace ProyectoR.Estudiantes
         {
             Session.Remove("Usuario");
             Session.Remove("ID");
+            Session.Remove("Numero_de_control");
             Response.Redirect("/Login.aspx");
         }
     }

@@ -28,6 +28,7 @@ namespace ProyectoR
             {
                 Session["Usuario"] = reader["Nombre"].ToString();
                 Session["ID"] = reader["ID"].ToString();
+                Session["Numero_de_control"] = reader["Numero_de_control"].ToString();
                 Response.Redirect("Estudiantes/IndexE.aspx");
             }
             cmd.Connection.Close();

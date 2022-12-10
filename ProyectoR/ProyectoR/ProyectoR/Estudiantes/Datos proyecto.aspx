@@ -27,14 +27,20 @@
 
         <div>
             <h1>Introduce los datos solicitados</h1>
+            <h1>Asegurate de introducir bien los datos ya que no podras cambiarlos despues</h1>
             <asp:Label ID="lblNombre" runat="server" Text="Nombre del proyecto:"></asp:Label><br />
-            <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox><br />
+            <asp:TextBox ID="txtNombre" runat="server" required></asp:TextBox><br />
 
             <asp:Label ID="lblDescripcion" runat="server" Text="Descripcion del proyecto:"></asp:Label><br />
-            <asp:TextBox ID="txtDescripcion" runat="server"></asp:TextBox> <br />
+            <asp:TextBox ID="txtDescripcion" runat="server" required></asp:TextBox> <br />
 
             <asp:Label ID="lblEmpresa" runat="server" Text="Empresa donde se realizara el proyecto:"></asp:Label><br />
-            <asp:TextBox ID="txtEmpresa" runat="server"></asp:TextBox><br />
+            <asp:TextBox ID="txtEmpresa" runat="server" required></asp:TextBox><br />
+
+            <asp:Label ID="lblAsesor" runat="server" Text="Nombre de asesor externo:"></asp:Label><br />
+            <asp:TextBox ID="txtAsesor" runat="server" required></asp:TextBox><br /><br />
+
+            <asp:Button ID="Button1" runat="server" Text="Guardar datos" class="Subir" OnClick="CrearDatos"/>
         </div>
     </form>
 </body>
