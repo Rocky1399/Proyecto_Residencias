@@ -18,6 +18,7 @@
   <li><a href="Revision1M.aspx">Revisión 1</a></li>
   <li><a href="Revision2M.aspx">Revisión 2</a></li>
   <li><a href="Revision3M.aspx">Revisión 3</a></li>
+  <li><a href="RevisorR1.aspx">Revisor r1</a></li>
   <li class="right"><asp:LinkButton ID="Cerrar" OnClick="BtnCerrar_Click" runat="server">Cerrar sesión</asp:LinkButton></li>
 </ul>
         </div>

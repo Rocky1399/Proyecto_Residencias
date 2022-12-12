@@ -1,6 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AnteproyectoM.aspx.cs" Inherits="ProyectoR.Maestros.AnteproyectoM" %>
-
-<!DOCTYPE html>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RevisorR1.aspx.cs" Inherits="ProyectoR.Maestros.RevisorR1" %>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -11,7 +9,6 @@
 </head>
 <body>
     <form id="form1" runat="server">
-
         <div>
  <ul class="topnav">
   <li><a href="IndexM.aspx">Inicio</a></li>
@@ -24,13 +21,14 @@
 </ul>
         </div>
 
-
-    <h1>Seleccione el anteproyecto que desee ver</h1>
+         <h1>Revision</h1>
+        <h4>Seleccione el periodo que desea revisar</h4>
+        <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="true" OnSelectedIndexChanged="BindGrid"></asp:DropDownList>
+        <h4>Seleccione al alumno</h4>
+        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="BindGrid"></asp:DropDownList>
     <hr />
     <asp:GridView ID="gvFiles" runat="server" AutoGenerateColumns="false">
         <Columns>
-            <asp:BoundField DataField="Nombre" HeaderText="Nombre del Alumno" />
-            <asp:BoundField DataField="Apellidos" HeaderText="Apellidos del alumno" />
             <asp:BoundField DataField="Name" HeaderText="Nombre del archivo" />
             <asp:TemplateField ItemStyle-HorizontalAlign="Center">
                 <ItemTemplate>
@@ -42,6 +40,7 @@
     <hr />
     <div id="pdf_container">
     </div>
+        <br />
     </form>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
@@ -53,7 +52,7 @@
                 var fileId = $(this).attr("rel");
                 $.ajax({
                     type: "POST",
-                    url: "AnteproyectoM.aspx/GetPDF",
+                    url: "RevisorR1.aspx/GetPDF",
                     data: "{fileId: " + fileId + "}",
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
