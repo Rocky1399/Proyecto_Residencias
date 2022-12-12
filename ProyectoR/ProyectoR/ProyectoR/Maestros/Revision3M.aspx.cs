@@ -165,7 +165,7 @@ namespace ProyectoR.Maestros
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "UPDATE tb_revision3 SET Comentarios = '" + txtComentario.Text + "' FROM tb_revision3 r INNER JOIN tb_alumnos ON r.Id_alumno = tb_alumnos.ID WHERE ID_AsesorInterno= " + Session["ID"].ToString() + "AND CONCAT(Nombre, ' ', Apellidos) = '" + DropDownList1.SelectedValue + "' AND CONCAT(tb_revision3.Periodo, ' ',tb_revision3.Año) = '" + DropDownList2.SelectedValue + "'";
+                cmd.CommandText = "UPDATE tb_revision3 SET Comentarios = '" + txtComentario.Text + "' FROM tb_revision3 r INNER JOIN tb_alumnos ON r.Id_alumno = tb_alumnos.ID WHERE ID_AsesorInterno= " + Session["ID"].ToString() + "AND CONCAT(Nombre, ' ', Apellidos) = '" + DropDownList1.SelectedValue + "' AND CONCAT(r.Periodo, ' ',r.Año) = '" + DropDownList2.SelectedValue + "'";
                 cmd.Connection = conn;
                 conn.Open();
                 cmd.ExecuteReader();
@@ -180,13 +180,14 @@ namespace ProyectoR.Maestros
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "UPDATE tb_revision3 SET Calificacion = '" + Convert.ToInt32(txtCalificacion.Text) + "' FROM tb_revision3 r INNER JOIN tb_alumnos ON r.Id_alumno = tb_alumnos.ID WHERE ID_AsesorInterno= " + Session["ID"].ToString() + "AND CONCAT(Nombre, ' ', Apellidos) = '" + DropDownList1.SelectedValue + "' AND CONCAT(tb_revision3.Periodo, ' ',tb_revision3.Año) = '" + DropDownList2.SelectedValue + "'";
+                cmd.CommandText = "UPDATE tb_revision3 SET Calificacion = '" + Convert.ToInt32(txtCalificacion.Text) + "' FROM tb_revision3 r INNER JOIN tb_alumnos ON r.Id_alumno = tb_alumnos.ID WHERE ID_AsesorInterno= " + Session["ID"].ToString() + "AND CONCAT(Nombre, ' ', Apellidos) = '" + DropDownList1.SelectedValue + "' AND CONCAT(r.Periodo, ' ',r.Año) = '" + DropDownList2.SelectedValue + "'";
                 cmd.Connection = conn;
                 conn.Open();
                 cmd.ExecuteReader();
                 conn.Close();
                 txtCalificacion.Text = "";
             }
+            CalificacionFinal();
             Response.Redirect(Request.Url.AbsoluteUri);
         }
 
@@ -195,7 +196,7 @@ namespace ProyectoR.Maestros
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "UPDATE tb_revision3 SET Liberado = 'Liberado' FROM tb_revision3 r INNER JOIN tb_alumnos ON r.Id_alumno = tb_alumnos.ID WHERE ID_AsesorInterno = " + Session["ID"].ToString() + "AND CONCAT(Nombre, ' ', Apellidos) = '" +DropDownList1.SelectedValue + "' AND CONCAT(tb_revision3.Periodo, ' ',tb_revision3.Año) = '" + DropDownList2.SelectedValue + "'";
+                cmd.CommandText = "UPDATE tb_revision3 SET Liberado = 'Liberado' FROM tb_revision3 r INNER JOIN tb_alumnos ON r.Id_alumno = tb_alumnos.ID WHERE ID_AsesorInterno = " + Session["ID"].ToString() + "AND CONCAT(Nombre, ' ', Apellidos) = '" +DropDownList1.SelectedValue + "' AND CONCAT(r.Periodo, ' ',r.Año) = '" + DropDownList2.SelectedValue + "'";
                 cmd.Connection = conn;
                 conn.Open();
                 cmd.ExecuteReader();
@@ -203,6 +204,77 @@ namespace ProyectoR.Maestros
             }
             Response.Redirect(Request.Url.AbsoluteUri);
         }
+
+        protected void CalificacionFinal()
+        {
+            int a = 0, b= 0, c= 0, calificacion = 0;
+            //Calificacion1
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "SELECT Calificacion FROM tb_revision1 INNER JOIN tb_alumnos ON tb_revision1.Id_alumno = tb_alumnos.ID WHERE ID_AsesorInterno = " + Session["ID"] + " AND CONCAT(Nombre, ' ', Apellidos) = '" + DropDownList1.SelectedValue + "' AND CONCAT(tb_revision1.Periodo, ' ',tb_revision1.Año) = '" + DropDownList2.SelectedValue + "'";
+                cmd.Connection = conn;
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    a = Convert.ToInt32(reader["Calificacion"].ToString());
+                }
+                else
+                {
+
+                }
+                conn.Close();
+            }
+            //Calificacion2
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "SELECT Calificacion FROM tb_revision2 INNER JOIN tb_alumnos ON tb_revision2.Id_alumno = tb_alumnos.ID WHERE ID_AsesorInterno = " + Session["ID"] + " AND CONCAT(Nombre, ' ', Apellidos) = '" + DropDownList1.SelectedValue + "' AND CONCAT(tb_revision2.Periodo, ' ',tb_revision2.Año) = '" + DropDownList2.SelectedValue + "'";
+                cmd.Connection = conn;
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    b = Convert.ToInt32(reader["Calificacion"].ToString());
+                }
+                else
+                {
+
+                }
+                conn.Close();
+            }
+            //Calificacion3
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "SELECT Calificacion FROM tb_revision3 INNER JOIN tb_alumnos ON tb_revision3.Id_alumno = tb_alumnos.ID WHERE ID_AsesorInterno = " + Session["ID"] + " AND CONCAT(Nombre, ' ', Apellidos) = '" + DropDownList1.SelectedValue + "' AND CONCAT(tb_revision3.Periodo, ' ',tb_revision3.Año) = '" + DropDownList2.SelectedValue + "'";
+                cmd.Connection = conn;
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    c = Convert.ToInt32(reader["Calificacion"].ToString());
+                }
+                else
+                {
+
+                }
+                conn.Close();
+            }
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
+            {
+                //Asignar calificacion
+                calificacion = (a + b + c) / 3;
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "UPDATE tb_info_proyectos SET Calificacion_Final = "+calificacion+ " FROM tb_info_proyectos INNER JOIN tb_alumnos ON tb_info_proyectos.ID_Alumno = tb_alumnos.ID WHERE ID_AsesorInterno = " + Session["ID"].ToString() + " AND CONCAT(tb_alumnos.Nombre, ' ', Apellidos) = '" + DropDownList1.SelectedValue + "' AND CONCAT(tb_info_proyectos.Periodo, ' ',tb_info_proyectos.Año) = '" + DropDownList2.SelectedValue + "'";
+                cmd.Connection = conn;
+                conn.Open();
+                cmd.ExecuteReader();
+                conn.Close();
+            }
+        }
+
 
         [System.Web.Services.WebMethod]
         public static object GetPDF(int fileId)
