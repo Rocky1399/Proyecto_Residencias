@@ -1,4 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RevisorR1.aspx.cs" Inherits="ProyectoR.Maestros.RevisorR1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RevisorR3.aspx.cs" Inherits="ProyectoR.Maestros.RevisorR3" %>
+
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -22,7 +24,6 @@
   <li class="right"><asp:LinkButton ID="Cerrar" OnClick="BtnCerrar_Click" runat="server">Cerrar sesión</asp:LinkButton></li>
 </ul>
         </div>
-
 
          <h1>Revision</h1>
         <h4>Seleccione el periodo que desea revisar</h4>
@@ -55,7 +56,7 @@
                 var fileId = $(this).attr("rel");
                 $.ajax({
                     type: "POST",
-                    url: "RevisorR1.aspx/GetPDF",
+                    url: "RevisorR3.aspx/GetPDF",
                     data: "{fileId: " + fileId + "}",
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",

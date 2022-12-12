@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RevisorR1.aspx.cs" Inherits="ProyectoR.Maestros.RevisorR1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RevisorR2.aspx.cs" Inherits="ProyectoR.Maestros.RevisorR2" %>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -55,7 +55,7 @@
                 var fileId = $(this).attr("rel");
                 $.ajax({
                     type: "POST",
-                    url: "RevisorR1.aspx/GetPDF",
+                    url: "RevisorR2.aspx/GetPDF",
                     data: "{fileId: " + fileId + "}",
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",

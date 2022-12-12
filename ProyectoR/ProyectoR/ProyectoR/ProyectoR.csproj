@@ -96,6 +96,8 @@
     <Content Include="Maestros\Revision2M.aspx" />
     <Content Include="Maestros\Revision3M.aspx" />
     <Content Include="Maestros\RevisorR1.aspx" />
+    <Content Include="Maestros\RevisorR2.aspx" />
+    <Content Include="Maestros\RevisorR3.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -252,6 +254,20 @@
     </Compile>
     <Compile Include="Maestros\RevisorR1.aspx.designer.cs">
       <DependentUpon>RevisorR1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\RevisorR2.aspx.cs">
+      <DependentUpon>RevisorR2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maestros\RevisorR2.aspx.designer.cs">
+      <DependentUpon>RevisorR2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\RevisorR3.aspx.cs">
+      <DependentUpon>RevisorR3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maestros\RevisorR3.aspx.designer.cs">
+      <DependentUpon>RevisorR3.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

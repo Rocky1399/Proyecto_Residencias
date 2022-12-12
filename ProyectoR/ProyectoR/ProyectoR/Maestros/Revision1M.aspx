@@ -19,9 +19,12 @@
   <li><a href="Revision2M.aspx">Revisión 2</a></li>
   <li><a href="Revision3M.aspx">Revisión 3</a></li>
   <li><a href="RevisorR1.aspx">Revisor r1</a></li>
+  <li><a href="RevisorR2.aspx">Revisor r2</a></li>
+  <li><a href="RevisorR3.aspx">Revisor r3</a></li>
   <li class="right"><asp:LinkButton ID="Cerrar" OnClick="BtnCerrar_Click" runat="server">Cerrar sesión</asp:LinkButton></li>
 </ul>
         </div>
+
 
         <h1>Revision 1</h1>
         <h4>Seleccione el periodo que desea revisar</h4>
