@@ -12,6 +12,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+
         <div>
  <ul class="topnav">
   <li><a href="IndexE.aspx">Inicio</a></li>
@@ -23,6 +24,10 @@
   <li><a href="Revision3.aspx">Revisión 3</a></li>
   <li class="right"><asp:LinkButton ID="Cerrar" OnClick="BtnCerrar_Click" runat="server">Cerrar sesión</asp:LinkButton></li>
 </ul>
+        </div>
+
+         <div>
+            <img src="../Files/logos.jpg" />
         </div>
 <div>
     <h1 class="titulo">

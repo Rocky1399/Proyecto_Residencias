@@ -89,6 +89,7 @@
     <Content Include="Estudiantes\Revision1.aspx" />
     <Content Include="Estudiantes\Revision2.aspx" />
     <Content Include="Estudiantes\Revision3.aspx" />
+    <Content Include="Files\logos.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="Maestros\AnteproyectoM.aspx" />
     <Content Include="Maestros\IndexM.aspx" />
