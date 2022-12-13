@@ -25,13 +25,13 @@
 </ul>
         </div>
 
-        <h1>Asignar Revisores</h1>
-        <h4>Seleccione al alumno</h4>
-        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="Cambio"></asp:DropDownList>
-        <h4>Seleccione al primer revisor</h4>
-        <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="true" OnSelectedIndexChanged="Cambio"></asp:DropDownList>
-        <h4>Seleccione al segundo revisor</h4>
-        <asp:DropDownList ID="DropDownList3" runat="server" AutoPostBack="true" OnSelectedIndexChanged="Cambio"></asp:DropDownList>
+        <h1 class="titulo">Asignar Revisores</h1>
+        <h4 class="subtituloproceso">Seleccione al alumno</h4>
+        <asp:DropDownList class="dropdown" ID="DropDownList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="Cambio"></asp:DropDownList>
+        <h4 class="subtituloproceso">Seleccione al primer revisor</h4>
+        <asp:DropDownList class="dropdown" ID="DropDownList2" runat="server" AutoPostBack="true" OnSelectedIndexChanged="Cambio"></asp:DropDownList>
+        <h4 class="subtituloproceso">Seleccione al segundo revisor</h4>
+        <asp:DropDownList class="dropdown" ID="DropDownList3" runat="server" AutoPostBack="true" OnSelectedIndexChanged="Cambio"></asp:DropDownList>
     <hr />
     <hr />
         <br />

@@ -25,6 +25,8 @@
   <li class="right"><asp:LinkButton ID="Cerrar" OnClick="BtnCerrar_Click" runat="server">Cerrar sesión</asp:LinkButton></li>
 </ul>
         </div>
+
+        <h1 class="titulo">Datos generales de los proyectos</h1>
         <div>
             <asp:GridView ID="gvFiles" runat="server" AutoGenerateColumns="false">
         <Columns>

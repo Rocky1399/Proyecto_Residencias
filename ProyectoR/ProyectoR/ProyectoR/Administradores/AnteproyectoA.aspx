@@ -26,8 +26,8 @@
 </ul>
         </div>
 
-    <h1>Seleccione el anteproyecto que desee ver</h1>
-    <asp:GridView ID="gvFiles" runat="server" AutoGenerateColumns="false">
+    <h1 class="titulo">Seleccione el anteproyecto que desee ver</h1>
+    <asp:GridView class="gv" ID="gvFiles" runat="server" AutoGenerateColumns="false">
         <Columns>
             <asp:BoundField DataField="Nombre" HeaderText="Nombre del alumno" />
             <asp:BoundField DataField="Apellidos" HeaderText="Apellidos del alumno" />

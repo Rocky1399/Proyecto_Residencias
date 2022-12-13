@@ -26,13 +26,13 @@
         </div>
 
 
-        <h1>Revision 1</h1>
-        <h4>Seleccione el periodo que desea revisar</h4>
+        <h1 class="titulo">Revision 1</h1>
+        <h4 class="subtituloproceso">Seleccione el periodo que desea revisar</h4>
         <asp:DropDownList class="dropdown" ID="DropDownList2" runat="server" AutoPostBack="true" OnSelectedIndexChanged="BindGrid"></asp:DropDownList>
-        <h4>Seleccione al alumno</h4>
+        <h4 class="subtituloproceso">Seleccione al alumno</h4>
         <asp:DropDownList class="dropdown" ID="DropDownList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="BindGrid"></asp:DropDownList>
     <hr />
-    <asp:GridView ID="gvFiles" runat="server" AutoGenerateColumns="false">
+    <asp:GridView class="gv" ID="gvFiles" runat="server" AutoGenerateColumns="false">
         <Columns>
             <asp:BoundField DataField="Name" HeaderText="Nombre del archivo" />
             <asp:TemplateField ItemStyle-HorizontalAlign="Center">
@@ -47,14 +47,14 @@
     </div>
                 <br />
         <div>
-    <asp:Label ID="lblComentario" runat="server" Text="Comentario"></asp:Label>
-    <asp:TextBox ID="txtComentario" runat="server"></asp:TextBox>
+    <asp:Label class="CalifCom" ID="lblComentario" runat="server" Text="Comentario"></asp:Label>
+    <asp:TextBox class="CalifCom" ID="txtComentario" runat="server"></asp:TextBox>
     <asp:Button ID="BtnComentario" runat="server" Text="Subir Comentario" class="Subir" OnClick="SubirComentario"/>
         </div>
     <br />
         <div>
-    <asp:Label ID="lblCalificacion" runat="server" Text="Calificacion"></asp:Label>
-    <asp:TextBox ID="txtCalificacion" type="number" runat="server"></asp:TextBox>
+    <asp:Label class="CalifCom" ID="lblCalificacion" runat="server" Text="Calificacion"></asp:Label>
+    <asp:TextBox class="CalifCom" ID="txtCalificacion" type="number" runat="server"></asp:TextBox>
     <asp:Button ID="BtnCalificacion" runat="server" Text="Subir Calificacion" class="Subir" OnClick="SubirCalificacion"/>
         </div>
         <br />

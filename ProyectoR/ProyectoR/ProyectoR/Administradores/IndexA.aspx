@@ -24,7 +24,7 @@
   <li class="right"><asp:LinkButton ID="Cerrar" OnClick="BtnCerrar_Click" runat="server">Cerrar sesión</asp:LinkButton></li>
 </ul>
         </div>
-            <h1>
+            <h1 class="titulo">
                 <asp:Label ID="lblBienvenida" runat="server" Text="Label"></asp:Label>
             </h1>
     </form>

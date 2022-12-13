@@ -25,11 +25,11 @@
 </ul>
         </div>
 
-        <h1>Asignar asesor interno</h1>
-        <h4>Seleccione al alumno</h4>
-        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="Cambio"></asp:DropDownList>
-        <h4>Seleccione al asesor interno</h4>
-        <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="true" OnSelectedIndexChanged="Cambio"></asp:DropDownList>
+        <h1 class="titulo">Asignar asesor interno</h1>
+        <h4 class="subtituloproceso">Seleccione al alumno</h4>
+        <asp:DropDownList class="dropdown" ID="DropDownList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="Cambio"></asp:DropDownList>
+        <h4 class="subtituloproceso">Seleccione al asesor interno</h4>
+        <asp:DropDownList class="dropdown" ID="DropDownList2" runat="server" AutoPostBack="true" OnSelectedIndexChanged="Cambio"></asp:DropDownList>
     <hr />
     <hr />
         <br />
