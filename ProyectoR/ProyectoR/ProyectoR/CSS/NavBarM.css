@@ -52,3 +52,17 @@ ul.topnav li.right {
 .titulo {
     text-align: center;
 }
+.subtituloproceso {
+    position: sticky;
+    left: 150px;
+    margin-left: 150px;
+    text-align: justify;
+}
+.texto {
+    position: sticky;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin-left: 100px;
+}
