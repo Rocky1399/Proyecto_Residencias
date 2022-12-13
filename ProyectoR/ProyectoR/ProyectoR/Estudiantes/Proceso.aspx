@@ -26,6 +26,10 @@
         </div>
 
         <div>
+            <img src="../Files/logos.jpg" />
+        </div>
+
+        <div>
             <h1 class="titulo">Proceso de solicitud</h1> <br />
             <h2 class="titulo">Para poder solicitar las residencias deberas descargar el primer formato anexado a la tabla y llenarlo de manera correspondiente a como se pide, seguido de esto deberas entregarlo a las oficinas de vinculación para continuar el proceso</h2>
         </div>

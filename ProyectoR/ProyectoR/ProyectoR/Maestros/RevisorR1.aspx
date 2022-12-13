@@ -23,6 +23,9 @@
 </ul>
         </div>
 
+        <div>
+            <img src="../Files/logos.jpg" />
+        </div>
 
          <h1 class ="titulo">Revision 1</h1>
         <h4 class="subtituloproceso">Seleccione el periodo que desea revisar</h4>

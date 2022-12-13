@@ -26,7 +26,9 @@
 </ul>
         </div>
 
-
+        <div>
+            <img src="../Files/logos.jpg" />
+        </div>
 
     <h1 class="titulo">Seleccione el anteproyecto que desee ver</h1>
     <hr />

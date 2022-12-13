@@ -24,6 +24,10 @@
 </ul>
         </div>
 
+         <div>
+            <img src="../Files/logos.jpg" />
+        </div>
+
 
     <h1 class="titulo">Seleccione su anteproyecto a formato PDF y subalo a la pagina</h1>
     <asp:FileUpload class="file" ID="FileUpload1" runat="server"/> <br />

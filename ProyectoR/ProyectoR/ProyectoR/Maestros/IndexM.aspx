@@ -27,6 +27,10 @@
 </ul>
         </div>
 
+        <div>
+            <img src="../Files/logos.jpg" />
+        </div>
+
             <h1 class="titulo">
                 <asp:Label ID="lblBienvenida" runat="server" Text="Label"></asp:Label>
             </h1>

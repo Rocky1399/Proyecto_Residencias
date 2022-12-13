@@ -25,6 +25,10 @@
 </ul>
         </div>
 
+        <div>
+            <img src="../Files/logos.jpg" />
+        </div>
+
                 <h1 class="titulo">Sube tu documento PDF para tu segunda revisión</h1>
  <asp:FileUpload class="file" ID="FileUpload1" runat="server" /> <br />
     <asp:Button ID="btnUpload" runat="server" Text="Subir" OnClick="Upload" class="Subir"/>

@@ -26,6 +26,10 @@
         </div>
 
         <div>
+            <img src="../Files/logos.jpg" />
+        </div>
+
+        <div>
             <h1 class="titulo">Introduce los datos solicitados</h1>
             <h2 class="titulo">Asegurate de introducir bien los datos ya que no podras cambiarlos despues</h2>
             <asp:Label ID="lblNombre" runat="server" Text="Nombre del proyecto:" class="texto"></asp:Label><br />
