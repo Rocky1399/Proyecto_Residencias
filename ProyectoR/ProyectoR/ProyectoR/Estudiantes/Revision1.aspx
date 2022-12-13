@@ -25,11 +25,11 @@
 </ul>
         </div>
 
-                <h1>Sube tu documento PDF para tu primera revisión</h1>
- <asp:FileUpload ID="FileUpload1" runat="server" /> <br />
+ <h1 class="titulo">Sube tu documento PDF para tu primera revisión</h1>
+ <asp:FileUpload class="file" ID="FileUpload1" runat="server" /> <br />
     <asp:Button ID="btnUpload" runat="server" Text="Subir" OnClick="Upload" class="Subir"/>
     <hr />
-    <asp:GridView ID="gvFiles" runat="server" AutoGenerateColumns="false">
+    <asp:GridView class="gv" ID="gvFiles" runat="server" AutoGenerateColumns="false">
         <Columns>
             <asp:BoundField DataField="Name" HeaderText="Nombre del archivo" />
             <asp:TemplateField ItemStyle-HorizontalAlign="Center">
@@ -116,8 +116,8 @@
             });
         };
     </script>
-    <asp:Label ID="LabelComentario" runat="server" Text="Comentario"></asp:Label>
-    <br />
-     <asp:Label ID="LabelCalificacion" runat="server" Text="Calificacion"></asp:Label>
+    <asp:Label class="CalifCom" ID="LabelComentario" runat="server" Text="Comentario"></asp:Label>
+    <br /><br />
+     <asp:Label class="CalifCom" ID="LabelCalificacion" runat="server" Text="Calificacion"></asp:Label>
 </body>
 </html>

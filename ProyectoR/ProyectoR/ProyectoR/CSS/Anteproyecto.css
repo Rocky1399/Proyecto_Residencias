@@ -27,6 +27,11 @@
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    margin-left: 100px;
+    margin-top: 10px;
+}
+.file{
+    margin-left:100px;
 }
 
 .Subir:active {
@@ -60,6 +65,9 @@
     -webkit-user-select: none;
     touch-action: manipulation;
     vertical-align: middle;
+    margin-left: 100px;
+    margin-top: 10px;
+    position: sticky;
 }
 
     .Volver:hover,

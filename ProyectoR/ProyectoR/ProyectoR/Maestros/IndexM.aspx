@@ -27,7 +27,7 @@
 </ul>
         </div>
 
-            <h1>
+            <h1 class="titulo">
                 <asp:Label ID="lblBienvenida" runat="server" Text="Label"></asp:Label>
             </h1>
         </div>

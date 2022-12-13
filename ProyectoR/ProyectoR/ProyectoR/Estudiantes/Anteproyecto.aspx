@@ -26,10 +26,10 @@
 
 
     <h1 class="titulo">Seleccione su anteproyecto a formato PDF y subalo a la pagina</h1>
-    <asp:FileUpload ID="FileUpload1" runat="server"/> <br />
+    <asp:FileUpload class="file" ID="FileUpload1" runat="server"/> <br />
     <asp:Button ID="btnUpload" runat="server" Text="Subir" OnClick="Upload" class="Subir"/>
     <hr />
-    <asp:GridView ID="gvFiles" runat="server" AutoGenerateColumns="false">
+    <asp:GridView class="gv" ID="gvFiles" runat="server" AutoGenerateColumns="false">
         <Columns>
             <asp:BoundField DataField="Name" HeaderText="Nombre del archivo" />
             <asp:TemplateField ItemStyle-HorizontalAlign="Center">
