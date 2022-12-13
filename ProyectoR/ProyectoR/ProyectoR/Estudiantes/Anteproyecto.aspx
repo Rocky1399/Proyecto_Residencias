@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <title>Anteproyecto</title>
-<link href="../CSS/NavBarE.css" rel="stylesheet" />
+<link href="../CSS/NavBarM.css" rel="stylesheet" />
     <link href="../CSS/Anteproyecto.css" rel="stylesheet"/>
 </head>
 
@@ -25,7 +25,7 @@
         </div>
 
 
-    <h1>Seleccione su anteproyecto a formato PDF y subalo a la pagina</h1>
+    <h1 class="titulo">Seleccione su anteproyecto a formato PDF y subalo a la pagina</h1>
     <asp:FileUpload ID="FileUpload1" runat="server"/> <br />
     <asp:Button ID="btnUpload" runat="server" Text="Subir" OnClick="Upload" class="Subir"/>
     <hr />

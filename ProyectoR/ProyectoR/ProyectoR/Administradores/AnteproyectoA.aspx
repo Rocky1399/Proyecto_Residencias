@@ -6,7 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
      <title>Anteproyecto</title>
-    <link href="../CSS/NavBarE.css" rel="stylesheet" />
+    <link href="../CSS/NavBarM.css" rel="stylesheet" />
     <link href="../CSS/Anteproyecto.css" rel="stylesheet"/>
 </head>
 

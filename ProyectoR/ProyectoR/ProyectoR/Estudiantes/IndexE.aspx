@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link href="../CSS/NavBarE.css" rel="stylesheet" />
+<link href="../CSS/NavBarM.css" rel="stylesheet" />
     <link href="../CSS/IndexE.css" rel="stylesheet" />
 
     <title>Index</title>
@@ -25,7 +25,7 @@
 </ul>
         </div>
 <div>
-    <h1>
+    <h1 class="titulo">
             <asp:Label ID="lblBienvenida" runat="server" Text="Label"></asp:Label>
     </h1>
 </div>

@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link href="../CSS/NavBarE.css" rel="stylesheet" />
+<link href="../CSS/NavBarM.css" rel="stylesheet" />
 <link href="../CSS/TablaProcesos.css" rel="stylesheet" />
     <title>Proceso para solicitar residencias</title>
 </head>
@@ -25,8 +25,8 @@
         </div>
 
         <div>
-            <h1>Proceso de solicitud</h1> 
-            <h3>Para poder solicitar las residencias deberas descargar el primer formato anexado a la tabla y llenarlo de manera correspondiente a como se pide, seguido de esto deberas entregarlo a las oficinas de vinculación para continuar el proceso</h3>
+            <h1 class="titulo">Proceso de solicitud</h1> 
+            <h3 class="titulo">Para poder solicitar las residencias deberas descargar el primer formato anexado a la tabla y llenarlo de manera correspondiente a como se pide, seguido de esto deberas entregarlo a las oficinas de vinculación para continuar el proceso</h3>
         </div>
 
        <div>

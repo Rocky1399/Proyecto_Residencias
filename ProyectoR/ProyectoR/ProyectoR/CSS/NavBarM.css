@@ -3,11 +3,12 @@
 }
 
 ul.topnav {
+    font-family: Montserrat;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #13322B;
 }
 
 ul.topnav li {
@@ -46,4 +47,8 @@ ul.topnav li.right {
     border-radius: 5px;
     background-color: #2691d9;
     font-weight: bold;
+}
+
+.titulo {
+    text-align: center;
 }

@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link href="../CSS/NavBarE.css" rel="stylesheet" />
+    <link href="../CSS/NavBarM.css" rel="stylesheet" />
     <link href="../CSS/Anteproyecto.css" rel="stylesheet" />
     <title>Datos proyecto</title>
 </head>
@@ -26,8 +26,8 @@
         </div>
 
         <div>
-            <h1>Introduce los datos solicitados</h1>
-            <h1>Asegurate de introducir bien los datos ya que no podras cambiarlos despues</h1>
+            <h1 class="titulo">Introduce los datos solicitados</h1>
+            <h2 class="titulo">Asegurate de introducir bien los datos ya que no podras cambiarlos despues</h2>
             <asp:Label ID="lblNombre" runat="server" Text="Nombre del proyecto:"></asp:Label><br />
             <asp:TextBox ID="txtNombre" runat="server" required></asp:TextBox><br />
 
