@@ -26,6 +26,10 @@
 </ul>
         </div>
 
+        <div>
+            <img src="../Files/logos.jpg" />
+        </div>
+
     <h1 class="titulo">Seleccione el anteproyecto que desee ver</h1>
     <asp:GridView class="gv" ID="gvFiles" runat="server" AutoGenerateColumns="false">
         <Columns>

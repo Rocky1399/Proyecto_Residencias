@@ -24,9 +24,24 @@
   <li class="right"><asp:LinkButton ID="Cerrar" OnClick="BtnCerrar_Click" runat="server">Cerrar sesión</asp:LinkButton></li>
 </ul>
         </div>
+
+        <div>
+            <img src="../Files/logos.jpg" />
+        </div>
             <h1 class="titulo">
                 <asp:Label ID="lblBienvenida" runat="server" Text="Label"></asp:Label>
             </h1>
+
+
+            <div class="instrucciones">
+                <h2>Asignar asesor interno: Aqui se le asigna un asesor a los estudiantes</h2>
+                <h2>Asignar revisores: Aqui asignarle revisores a los estudiantes</h2>
+                <h2>Anteproyecto: Aqui podra ver los anteproyectos de todos los alumnos</h2>
+                <h2>Revision 1: Aqui podra ver la primera revisión de los residentes</h2>
+                <h2>Revision 2: Aqui podra ver la segunda revisión de los residentes</h2>
+                <h2>Revision 3: Aqui podra ver la tercera revisión de los residentes</h2>
+                <h2>Datos : Aqui podra ver los datos de los residentes, asi como su calificacion final</h2>
+            </div>
     </form>
 </body>
 </html>

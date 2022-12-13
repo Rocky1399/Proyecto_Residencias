@@ -25,6 +25,10 @@
 </ul>
         </div>
 
+        <div>
+            <img src="../Files/logos.jpg" />
+        </div>
+
         <h1 class="titulo">Revision 2</h1>
         <h4 class="subtituloproceso">Seleccione el periodo que desea revisar</h4>
         <asp:DropDownList class="dropdown" ID="DropDownList2" runat="server" AutoPostBack="true" OnSelectedIndexChanged="BindGrid"></asp:DropDownList>

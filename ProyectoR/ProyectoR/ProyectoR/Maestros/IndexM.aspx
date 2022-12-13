@@ -34,6 +34,17 @@
             <h1 class="titulo">
                 <asp:Label ID="lblBienvenida" runat="server" Text="Label"></asp:Label>
             </h1>
+
+            <div class="instrucciones">
+                <h2>Anteproyecto: Aqui podra ver los anteproyectos de los alumnos asignados</h2>
+                <h2>Revision 1: Aqui podra ver la primera revisión de sus residentes, ademas de poder calificar y comentar cada uno de los documentos</h2>
+                <h2>Revision 2: Aqui podra ver la segunda revisión de sus residentes, ademas de poder calificar y comentar cada uno de los documentos</h2>
+                <h2>Revision 3: Aqui podra ver la tercera revisión de sus residentes, ademas de poder calificar y comentar cada uno de los documentos</h2>
+                <h2>Revisor r1: Aqui podra ver la primera revisión de sus residentes asignados como revisor</h2>
+                <h2>Revisor r2: Aqui podra ver la segunda revisión de sus residentes asignados como revisor</h2>
+                <h2>Revisor r3: Aqui podra ver la tercera revisión de sus residentes asignados como revisor</h2>
+            </div>
+
         </div>
     </form>
 </body>

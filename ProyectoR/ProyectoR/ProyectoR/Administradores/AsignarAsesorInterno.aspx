@@ -25,6 +25,10 @@
 </ul>
         </div>
 
+        <div>
+            <img src="../Files/logos.jpg" />
+        </div>
+
         <h1 class="titulo">Asignar asesor interno</h1>
         <h4 class="subtituloproceso">Seleccione al alumno</h4>
         <asp:DropDownList class="dropdown" ID="DropDownList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="Cambio"></asp:DropDownList>

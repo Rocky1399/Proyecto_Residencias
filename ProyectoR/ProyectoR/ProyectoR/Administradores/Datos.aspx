@@ -26,6 +26,10 @@
 </ul>
         </div>
 
+        <div>
+            <img src="../Files/logos.jpg" />
+        </div>
+
         <h1 class="titulo">Datos generales de los proyectos</h1>
         <div>
             <asp:GridView ID="gvFiles" runat="server" AutoGenerateColumns="false">
