@@ -34,9 +34,9 @@
             <div class="menu">
                 <a href="IndexA.aspx" class="d-block text-light p-3 border-0"><i class="icon ion-md-home lead mr-2"></i>
                     Inicio</a>
-                <a href="AsignarAsesorInterno.aspx" class="d-block text-light p-3 border-0"><i class="icon ion-md-filing lead mr-2"></i>
+                <a href="AsignarAsesorInterno.aspx" class="d-block text-light p-3 border-0"><i class="icon ion-md-person lead mr-2"></i>
                     Asignar asesor interno</a>
-                <a href="AsignarRevisores.aspx" class="d-block text-light p-3 border-0"><i class="icon ion-md-filing lead mr-2"></i>
+                <a href="AsignarRevisores.aspx" class="d-block text-light p-3 border-0"><i class="icon ion-md-people lead mr-2"></i>
                     Asignar revisores</a>
                 <a href="AnteproyectoA.aspx" class="d-block text-light p-3 border-0"><i class="icon ion-md-filing lead mr-2"></i>
                     Anteproyecto</a>
@@ -46,7 +46,7 @@
                     Revision 2</a>
                 <a href="Revision3A.aspx" class="d-block text-light p-3 border-0"> <i class="icon ion-md-book lead mr-2"></i>
                     Revision 3</a>
-                <a href="Datos.aspx" class="d-block text-light p-3 border-0"><i class="icon ion-md-filing lead mr-2"></i>
+                <a href="Datos.aspx" class="d-block text-light p-3 border-0"><i class="icon ion-md-paper lead mr-2"></i>
                     Datos de los alumnos</a>
                 <a href="../Login.aspx" class="d-block text-light p-3 border-0"> <i class="icon ion-md-log-out lead mr-2"></i>
                     Cerrar sesion</a>
