@@ -15,6 +15,7 @@ namespace ProyectoR
         {
             Session.Remove("Usuario");
             Session.Remove("ID");
+            Session.Remove("Numero_de_control");
         }
         protected void BtnLog(object sender, EventArgs e)
 

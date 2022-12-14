@@ -4,7 +4,7 @@
     position: sticky;
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    left: 150px;
+    margin-left: 100px;
 }
 
     #tabla td, #tabla th {

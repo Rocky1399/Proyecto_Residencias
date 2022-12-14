@@ -76,11 +76,11 @@
     <Content Include="Administradores\Revision2A.aspx" />
     <Content Include="Administradores\Revision3A.aspx" />
     <Content Include="CSS\Anteproyecto.css" />
-    <Content Include="CSS\IndexE.css" />
-    <Content Include="CSS\IndexM.css" />
     <Content Include="CSS\Login.css" />
     <Content Include="CSS\NavBarE.css" />
     <Content Include="CSS\NavBarM.css" />
+    <Content Include="CSS\Prueba.css" />
+    <Content Include="CSS\Style.css" />
     <Content Include="CSS\TablaProcesos.css" />
     <Content Include="Estudiantes\Anteproyecto.aspx" />
     <Content Include="Estudiantes\Datos proyecto.aspx" />

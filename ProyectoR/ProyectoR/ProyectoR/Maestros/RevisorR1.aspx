@@ -2,26 +2,56 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link href="../CSS/Anteproyecto.css" rel="stylesheet" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Styles -->
+    <link href="../CSS/Style.css" rel="stylesheet" />
     <link href="../CSS/NavBarM.css" rel="stylesheet" />
-    <title></title>
+    <link href="../CSS/Anteproyecto.css" rel="stylesheet" />
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,700&display=swap" rel="stylesheet">
+
+    <!-- Ionic icons -->
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <title>Revisor r1</title>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
- <ul class="topnav">
-  <li><a href="IndexM.aspx">Inicio</a></li>
-  <li><a href="AnteproyectoM.aspx">Anteproyecto</a></li>
-  <li><a href="Revision1M.aspx">Revisión 1</a></li>
-  <li><a href="Revision2M.aspx">Revisión 2</a></li>
-  <li><a href="Revision3M.aspx">Revisión 3</a></li>
-  <li><a href="RevisorR1.aspx">Revisor r1</a></li>
-  <li><a href="RevisorR2.aspx">Revisor r2</a></li>
-  <li><a href="RevisorR3.aspx">Revisor r3</a></li>
-  <li class="right"><asp:LinkButton ID="Cerrar" OnClick="BtnCerrar_Click" runat="server">Cerrar sesión</asp:LinkButton></li>
-</ul>
+        <div class="d-flex" id="content-wrapper">
+        <div id="sidebar-container" class="bg-primary">
+            <div class="logo">
+                <h4 class="text-light font-weight-bold mb-0">Residencias</h4>
+            </div>
+            <div class="menu">
+                <a href="IndexM.aspx" class="d-block text-light p-3 border-0"><i class="icon ion-md-home lead mr-2"></i>
+                    Inicio</a>
+                <a href="AnteproyectoM.aspx" class="d-block text-light p-3 border-0"><i class="icon ion-md-filing lead mr-2"></i>
+                    Anteproyecto</a>
+                <a href="Revision1M.aspx" class="d-block text-light p-3 border-0"> <i class="icon ion-md-book lead mr-2"></i>
+                    Revision 1</a>
+                <a href="Revision2M.aspx" class="d-block text-light p-3 border-0"> <i class="icon ion-md-book lead mr-2"></i>
+                    Revision 2</a>
+                <a href="Revision3M.aspx" class="d-block text-light p-3 border-0"> <i class="icon ion-md-book lead mr-2"></i>
+                    Revision 3</a>
+                <a href="RevisorR1.aspx" class="d-block text-light p-3 border-0"> <i class="icon ion-md-book lead mr-2"></i>
+                    Revisor 1</a>
+                <a href="RevisorR2.aspx" class="d-block text-light p-3 border-0"> <i class="icon ion-md-book lead mr-2"></i>
+                    Revisor 2</a>
+                <a href="RevisorR3.aspx" class="d-block text-light p-3 border-0"> <i class="icon ion-md-book lead mr-2"></i>
+                    Revisor 3</a>
+                <a href="../Login.aspx" class="d-block text-light p-3 border-0"> <i class="icon ion-md-log-out lead mr-2"></i>
+                    Cerrar sesion</a>
+            </div>
         </div>
+        </div>
+
+                    <div class="main">
 
         <div>
             <img src="../Files/logos.jpg" />
@@ -47,6 +77,7 @@
     <div id="pdf_container">
     </div>
         <br />
+                        </div>
     </form>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
