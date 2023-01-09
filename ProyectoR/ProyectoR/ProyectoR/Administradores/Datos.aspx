@@ -64,8 +64,8 @@
         <div>
             <asp:GridView ID="gvFiles" runat="server" AutoGenerateColumns="false">
         <Columns>
-            <asp:BoundField DataField="Nombre" HeaderText="Nombre del alumno" />
-            <asp:BoundField DataField="Descripcion" HeaderText="Nombre del proyecto" />
+            <asp:BoundField DataField="Nombre" HeaderText="Nombre del proyecto" />
+            <asp:BoundField DataField="Descripcion" HeaderText="descripción del proyecto" />
             <asp:BoundField DataField="Empresa" HeaderText="Nombre de la empresa" />
             <asp:BoundField DataField="Asesor_Externo" HeaderText="Nombre del asesor externo" />
             <asp:BoundField DataField="Periodo" HeaderText="Periodo" />

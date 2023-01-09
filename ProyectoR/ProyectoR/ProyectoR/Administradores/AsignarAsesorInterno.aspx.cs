@@ -42,7 +42,7 @@ namespace ProyectoR.Administradores
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "SELECT ID, CONCAT(Nombre, ' ', Apellidos) AS NombreC FROM tb_alumnos";
+                cmd.CommandText = "SELECT A.ID, CONCAT(A.Nombre, ' ', Apellidos) AS NombreC FROM tb_alumnos A INNER JOIN tb_info_proyectos ON A.Numero_de_control = tb_info_proyectos.Numero_de_control";
                 cmd.Connection = conn;
                 conn.Open();
                 DropDownList1.DataSource = cmd.ExecuteReader();
