@@ -71,7 +71,7 @@ namespace ProyectoR.Maestros
                 {
                     using (SqlCommand cmd = new SqlCommand())
                     {
-                        cmd.CommandText = "SELECT tb_revision3.Id, Name, tb_alumnos.Nombre, tb_alumnos.Apellidos FROM tb_revision3 INNER JOIN tb_alumnos ON tb_revision3.Id_alumno = tb_alumnos.ID WHERE tb_alumnos.Revisor1 = '" + Session["ID"].ToString() + "' OR tb_alumnos.Revisor2 = '" + Session["ID"].ToString() + "'";
+                        cmd.CommandText = "SELECT tb_revision3.Id, Name, tb_alumnos.Nombre, tb_alumnos.Apellidos FROM tb_revision3 INNER JOIN tb_alumnos ON tb_revision3.Id_alumno = tb_alumnos.ID WHERE CONCAT(Nombre, ' ',Apellidos)= '"+DropDownList1.SelectedValue+"' AND tb_alumnos.Revisor1 = '" + Session["ID"].ToString() + "' OR tb_alumnos.Revisor2 = '" + Session["ID"].ToString() + "'";
                         cmd.Connection = con;
                         con.Open();
                         gvFiles.DataSource = cmd.ExecuteReader();

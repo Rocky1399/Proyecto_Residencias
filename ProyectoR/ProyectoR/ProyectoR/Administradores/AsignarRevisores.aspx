@@ -60,6 +60,8 @@
         </div>
 
         <h1 class="titulo">Asignar Revisores</h1>
+        <h4 class="subtituloproceso">Seleccione periodo</h4>
+        <asp:DropDownList class="dropdown" ID="DropDownList4" runat="server" AutoPostBack="true" OnSelectedIndexChanged="Cambio"></asp:DropDownList>
         <h4 class="subtituloproceso">Seleccione al alumno</h4>
         <asp:DropDownList class="dropdown" ID="DropDownList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="Cambio"></asp:DropDownList>
         <h4 class="subtituloproceso">Seleccione al primer revisor</h4>

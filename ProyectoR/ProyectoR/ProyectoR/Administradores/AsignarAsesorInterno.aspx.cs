@@ -27,6 +27,7 @@ namespace ProyectoR.Administradores
             {
                 LlenarDropDownListAlumnos();
                 LlenarDropDownListAsesor();
+                LlenarDropDownListPeriodo();
             }
         }
 
@@ -42,7 +43,7 @@ namespace ProyectoR.Administradores
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "SELECT A.ID, CONCAT(A.Nombre, ' ', Apellidos) AS NombreC FROM tb_alumnos A INNER JOIN tb_info_proyectos ON A.Numero_de_control = tb_info_proyectos.Numero_de_control";
+                cmd.CommandText = "SELECT DISTINCT A.ID, CONCAT(A.Nombre, ' ', Apellidos) AS NombreC  FROM tb_alumnos A INNER JOIN tb_info_proyectos ON A.Numero_de_control = tb_info_proyectos.Numero_de_control";
                 cmd.Connection = conn;
                 conn.Open();
                 DropDownList1.DataSource = cmd.ExecuteReader();
@@ -52,7 +53,22 @@ namespace ProyectoR.Administradores
                 conn.Close();
             }
         }
-
+        protected void LlenarDropDownListPeriodo()
+        {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
+            {
+                string a;
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "SELECT DISTINCT A.ID, CONCAT(tb_info_proyectos.Periodo, ' ', tb_info_proyectos.Año) AS Per  FROM tb_alumnos A INNER JOIN tb_info_proyectos ON A.Numero_de_control = tb_info_proyectos.Numero_de_control";
+                cmd.Connection = conn;
+                conn.Open();
+                DropDownList3.DataSource = cmd.ExecuteReader();
+                DropDownList3.DataTextField = "Per";
+                DropDownList3.DataBind();
+                DropDownList3.Items.Insert(0, new ListItem("Seleccionar periodo"));
+                conn.Close();
+            }
+        }
         protected void LlenarDropDownListAsesor()
         {
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
@@ -108,6 +124,7 @@ namespace ProyectoR.Administradores
                 }
                 conn.Close();
             }
+
             //Agarrar ID del alumno seleccionado
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
             {
@@ -129,7 +146,7 @@ namespace ProyectoR.Administradores
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "UPDATE tb_alumnos SET ID_AsesorInterno ='" + a + "', Periodo = '" + periodo + "',Año ='" + año +"'WHERE CONCAT(Nombre, ' ', Apellidos)= '" +DropDownList1.SelectedValue+"'";
+                cmd.CommandText = "UPDATE tb_alumnos SET ID_AsesorInterno ='" + a + "', Periodo = '" + periodo + "',Año ='" + año +"'WHERE CONCAT(Nombre, ' ', Apellidos)= '" +DropDownList1.SelectedValue+"' AND CONCAT (Periodo, ' ', Año)= '"+DropDownList3.SelectedValue+"'";
                 cmd.Connection = conn;
                 conn.Open();
                 cmd.ExecuteReader();
@@ -139,7 +156,7 @@ namespace ProyectoR.Administradores
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "UPDATE tb_info_proyectos SET Asesor_Interno_RFC ='" +rfc+ "'WHERE ID_Alumno = '"+b+"'";
+                cmd.CommandText = "UPDATE tb_info_proyectos SET Asesor_Interno_RFC ='" +rfc+ "'WHERE ID_Alumno = '"+b+"' AND CONCAT(Periodo, ' ', Año)= '"+DropDownList3.SelectedValue+"'";
                 cmd.Connection = conn;
                 conn.Open();
                 cmd.ExecuteReader();
@@ -152,7 +169,7 @@ namespace ProyectoR.Administradores
 
         protected void Cambio(object sender, EventArgs e)
         {
-            if (DropDownList1.SelectedValue != "Seleccionar alumno" && DropDownList2.SelectedValue != "Seleccionar asesor")
+            if (DropDownList1.SelectedValue != "Seleccionar alumno" && DropDownList2.SelectedValue != "Seleccionar asesor" && DropDownList3.SelectedValue != "Seleccionar periodo")
             {
                 BtnAsignar.Visible = true;
             }
