@@ -28,7 +28,7 @@ namespace ProyectoR.Estudiantes
                 this.Texto();
                 this.Calificacion();
             }
-
+            //Si ya ha subido los documentos entonces no se mostrara ningún boton
             string constr = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
             using (SqlConnection con = new SqlConnection(constr))
             {
