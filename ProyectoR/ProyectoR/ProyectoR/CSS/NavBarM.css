@@ -90,12 +90,16 @@ ul.topnav li.right {
 
 .titulo {
     text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+    font-weight: 900;
 }
 .subtituloproceso {
+    max-width: 950px;
     position: sticky;
     left: 150px;
-    margin-left: 150px;
     text-align: justify;
+    margin-left: 50px;
 }
 .texto {
     position: sticky;
@@ -106,18 +110,129 @@ ul.topnav li.right {
     margin-left: 100px;
 }
 
-.gv{
-    margin-left:100px
+.gv {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: sticky;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    margin-left: 50px;
 }
+    .gv td, .gv th {
+        border: 1px solid #ddd;
+        padding: 20px;
+    }
+.gv th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: #0000FF;
+        color: white;
+    }
+.gv tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.gv tr:hover {
+    background-color: #ddd;
+}
+
 .CalifCom {
-    font-size: 30px;
-    font-family: "Times New Roman", Times, serif;
-    margin-left: 200px;
+    font-size: 15px;
+    margin-left: 250px;
     margin-top: 20px
 }
 
 .instrucciones {
-    margin-left: 100px;
+    margin-left: 40px;
     font-size: 20px;
 }
+.container{
+    background: #fff;
+    width: 800px;
+    max-width: 800px;
+    padding: 25px 40px 10px 40px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+}
+.container .text{
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center;
+}
 
+.container .frow{
+    margin: 32px 0;
+}
+
+.frow .input-data{
+    width:100%;
+    height: 40px;
+    margin: 0 20px;
+    position: relative;
+    margin-top: 35px;
+}
+
+.input-data input{
+    display: block;
+    height: 100%;
+    width: 100%;
+    border:none;
+    font-size: 17px;
+    border-bottom: 2px solid rgba(0,0,0,0.12);
+}
+.input-data input:focus ~ .lbl{
+    transform: translateY(-30px);
+    color: #3498db;
+    font-size:14px;
+}
+
+.input-data .lbl{
+    position: absolute;
+    bottom: 10px;
+    font-size: 16px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.frow .advertencia{
+    margin-top: 20px;
+    margin-left: 20px;
+    text-align:center;
+    font-weight: bold;
+}
+.frow .button-form {
+    background-color: #0a6bff;
+    border-radius: 4px;
+    border: 0;
+    box-shadow: rgba(1,60,136,.5) 0 -1px 3px 0 inset,rgba(0,44,97,.1) 0 3px 6px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inherit;
+    font-family: "Space Grotesk",-apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    margin: 0;
+    min-height: 56px;
+    min-width: 120px;
+    padding: 16px 20px;
+    position: relative;
+    text-align: center;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    transition: all .2s cubic-bezier(.22, .61, .36, 1);
+}
+
+    .frow .button-form:hover {
+        background-color: #065dd8;
+        transform: translateY(-2px);
+    }
+
+@media (min-width: 768px) {
+    .frow .button-form {
+        padding: 16px 44px;
+        min-width: 150px;
+    }
+}

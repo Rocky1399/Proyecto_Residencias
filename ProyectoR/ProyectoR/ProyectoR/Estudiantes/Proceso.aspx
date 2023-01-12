@@ -59,10 +59,11 @@
 
         <div>
             <h1 class="titulo">Proceso de solicitud</h1> <br />
-            <h2 class="titulo">Para poder solicitar las residencias deberas descargar el primer formato anexado a la tabla y llenarlo de manera correspondiente a como se pide, seguido de esto deberas entregarlo a las oficinas de vinculación para continuar el proceso</h2>
+            <h5 class="subtituloproceso">Para poder solicitar las residencias deberas descargar el primer formato anexado a la tabla y llenarlo de manera correspondiente a como se pide, seguido de esto deberas entregarlo a las oficinas de vinculación para continuar el proceso</h5>
         </div>
 
        <div>
+
        <table id="tabla">
         <tr>
          <th>Documento</th>
@@ -96,10 +97,10 @@
     </table>
    </div>
 
-    <h2 class="subtituloproceso">Formato para solicitar residencias: Este documento es el formato necesario para poder solicitar las residencias</h2><br />
-    <h2 class="subtituloproceso">Reporte de evaluacion 10%: Este documento se debe de llenar con tus datos personales y entregarlo para su revision a tu asesor interno, es tu revision del informe de residencias completado a un 10%</h2><br />
-    <h2 class="subtituloproceso">Seguimiento de proyecto de residencias: Este formato es para que tu lo llenes de tal manera que expliques los tiempos que te tomara realizar tu proyecto </h2> <br />
-    <h2 class="subtituloproceso">Portada oficial residencias: este formato es la portada oficial que se debe de utilizar para hacer tu informe final de residencias</h2>
+    <h5 class="subtituloproceso">Formato para solicitar residencias: Este documento es el formato necesario para poder solicitar las residencias</h5><br />
+    <h5 class="subtituloproceso">Reporte de evaluacion 10%: Este documento se debe de llenar con tus datos personales y entregarlo para su revision a tu asesor interno, es tu revision del informe de residencias completado a un 10%</h5><br />
+    <h5 class="subtituloproceso">Seguimiento de proyecto de residencias: Este formato es para que tu lo llenes de tal manera que expliques los tiempos que te tomara realizar tu proyecto </h5> <br />
+    <h5 class="subtituloproceso">Portada oficial residencias: este formato es la portada oficial que se debe de utilizar para hacer tu informe final de residencias</h5>
 
         </div>
     </form>

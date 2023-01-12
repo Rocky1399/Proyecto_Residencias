@@ -62,7 +62,7 @@
 
         <h1 class="titulo">Datos generales de los proyectos</h1>
         <div>
-            <asp:GridView ID="gvFiles" runat="server" AutoGenerateColumns="false">
+            <asp:GridView ID="gvFiles" runat="server" AutoGenerateColumns="false" class="gv">
         <Columns>
             <asp:BoundField DataField="Nombre" HeaderText="Nombre del proyecto" />
             <asp:BoundField DataField="Descripcion" HeaderText="descripción del proyecto" />

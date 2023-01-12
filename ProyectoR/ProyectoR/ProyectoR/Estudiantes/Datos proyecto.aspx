@@ -56,22 +56,34 @@
             <img src="../Files/logos.jpg" />
         </div>
 
-        <div>
             <h1 class="titulo">Introduce los datos solicitados</h1>
-            <h2 class="titulo">Asegurate de introducir bien los datos ya que no podras cambiarlos despues</h2>
-            <asp:Label ID="lblNombre" runat="server" Text="Nombre del proyecto:" class="texto"></asp:Label><br />
-            <asp:TextBox ID="txtNombre" runat="server" required class="texto"></asp:TextBox><br />
 
-            <asp:Label ID="lblDescripcion" runat="server" Text="Descripcion del proyecto:" class="texto"></asp:Label><br />
-            <asp:TextBox ID="txtDescripcion" runat="server" required class="texto"></asp:TextBox> <br />
+            <div class ="container">
+                <div class="text">Formulario</div>
+                    <div class="frow">
+                        <div class="input-data">
+                          <asp:TextBox ID="txtNombre" runat="server" required></asp:TextBox>
+                          <asp:Label ID="lblNombre" runat="server" Text="Nombre del proyecto" class="lbl"></asp:Label>
+                        </div>
+                        <div class="input-data">
+                            <asp:TextBox ID="txtDescripcion" runat="server" required></asp:TextBox>
+                            <asp:Label ID="lblDescripcion" runat="server" Text="Descripcion del proyecto" class="lbl"></asp:Label>
+                        </div>
+                        <div class="input-data">
+                          <asp:TextBox ID="txtEmpresa" runat="server" required></asp:TextBox>
+                          <asp:Label ID="lblEmpresa" runat="server" Text="Empresa" class="lbl"></asp:Label>
+                        </div>
+                        <div class="input-data">
+                            <asp:TextBox ID="txtAsesor" runat="server" required></asp:TextBox>
+                            <asp:Label ID="lblAsesor" runat="server" Text="Nombre de asesor externo" class="lbl"></asp:Label>
+                        </div>
+                      <h6 class="advertencia">Asegurate de introducir bien los datos ya que no podras cambiarlos despues</h6><br />
+                      <asp:Button ID="Button1" runat="server" Text="Guardar datos" class="button-form" OnClick="CrearDatos"/>
+                    </div>
+            </div>
 
-            <asp:Label ID="lblEmpresa" runat="server" Text="Empresa donde se realizara el proyecto:" class="texto"></asp:Label><br />
-            <asp:TextBox ID="txtEmpresa" runat="server" required class="texto"></asp:TextBox><br />
+        <div>
 
-            <asp:Label ID="lblAsesor" runat="server" Text="Nombre de asesor externo:" class="texto"></asp:Label><br />
-            <asp:TextBox ID="txtAsesor" runat="server" required class="texto"></asp:TextBox><br /><br />
-
-            <asp:Button ID="Button1" runat="server" Text="Guardar datos" class="Subir" OnClick="CrearDatos"/>
         </div>
             </div>
     </form>

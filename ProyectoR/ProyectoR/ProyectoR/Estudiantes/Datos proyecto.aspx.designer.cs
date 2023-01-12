@@ -24,15 +24,6 @@ namespace ProyectoR.Estudiantes
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control lblNombre.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombre;
-
-        /// <summary>
         /// Control txtNombre.
         /// </summary>
         /// <remarks>
@@ -42,13 +33,13 @@ namespace ProyectoR.Estudiantes
         protected global::System.Web.UI.WebControls.TextBox txtNombre;
 
         /// <summary>
-        /// Control lblDescripcion.
+        /// Control lblNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescripcion;
+        protected global::System.Web.UI.WebControls.Label lblNombre;
 
         /// <summary>
         /// Control txtDescripcion.
@@ -60,13 +51,13 @@ namespace ProyectoR.Estudiantes
         protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
 
         /// <summary>
-        /// Control lblEmpresa.
+        /// Control lblDescripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEmpresa;
+        protected global::System.Web.UI.WebControls.Label lblDescripcion;
 
         /// <summary>
         /// Control txtEmpresa.
@@ -78,13 +69,13 @@ namespace ProyectoR.Estudiantes
         protected global::System.Web.UI.WebControls.TextBox txtEmpresa;
 
         /// <summary>
-        /// Control lblAsesor.
+        /// Control lblEmpresa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAsesor;
+        protected global::System.Web.UI.WebControls.Label lblEmpresa;
 
         /// <summary>
         /// Control txtAsesor.
@@ -94,6 +85,15 @@ namespace ProyectoR.Estudiantes
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtAsesor;
+
+        /// <summary>
+        /// Control lblAsesor.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAsesor;
 
         /// <summary>
         /// Control Button1.
