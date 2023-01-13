@@ -83,9 +83,9 @@ ul.topnav li.right {
     font-size: 17px;
     padding: 5px 10px;
     border-radius: 5px;
-    background-color: #2691d9;
+    background-color: #0a6bff;
     font-weight: bold;
-    margin-left: 150px;
+    margin-left: 50px;
 }
 
 .titulo {
@@ -141,6 +141,18 @@ ul.topnav li.right {
     font-size: 15px;
     margin-left: 250px;
     margin-top: 20px
+}
+.cont input {
+    display: block;
+    font-size: 17px;
+    margin-left: 60px;
+    font-size: 17px;
+}
+
+.cont .lblCalifCom {
+    margin-left: 55px;
+    margin-top: 5px;
+    font-size: 16px;
 }
 
 .instrucciones {

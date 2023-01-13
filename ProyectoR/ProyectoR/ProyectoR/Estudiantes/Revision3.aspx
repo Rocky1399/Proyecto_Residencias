@@ -32,7 +32,7 @@
                 <h4 class="text-light font-weight-bold mb-0">Residencias</h4>
             </div>
             <div class="menu">
-                <a href="IndexE.aspx" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
+                <a href="IndexE.aspx" class="d-block text-light p-3 border-0"><i class="icon ion-md-home lead mr-2"></i>
                     Inicio</a>
                 <a href="Proceso.aspx" class="d-block text-light p-3 border-0"><i class="icon ion-md-people lead mr-2"></i>
                     Proceso de solicitud</a>

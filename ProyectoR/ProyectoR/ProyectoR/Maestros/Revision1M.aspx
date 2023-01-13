@@ -79,15 +79,15 @@
     <div id="pdf_container">
     </div>
                 <br />
-        <div>
-    <asp:Label class="CalifCom" ID="lblComentario" runat="server" Text="Comentario"></asp:Label>
-    <asp:TextBox class="CalifCom" ID="txtComentario" runat="server"></asp:TextBox>
+        <div class="cont">
+    <asp:Label class="lblCalifCom" ID="lblComentario" runat="server" Text="Comentario"></asp:Label>
+    <asp:TextBox ID="txtComentario" runat="server"></asp:TextBox>
     <asp:Button ID="BtnComentario" runat="server" Text="Subir Comentario" class="Subir" OnClick="SubirComentario"/>
         </div>
     <br />
-        <div>
-    <asp:Label class="CalifCom" ID="lblCalificacion" runat="server" Text="Calificacion"></asp:Label>
-    <asp:TextBox class="CalifCom" ID="txtCalificacion" type="number" runat="server"></asp:TextBox>
+        <div class="cont">
+    <asp:Label class="lblCalifCom" ID="lblCalificacion" runat="server" Text="Calificacion"></asp:Label>
+    <asp:TextBox ID="txtCalificacion" type="number" runat="server"></asp:TextBox>
     <asp:Button ID="BtnCalificacion" runat="server" Text="Subir Calificacion" class="Subir" OnClick="SubirCalificacion"/>
         </div>
         <br />
