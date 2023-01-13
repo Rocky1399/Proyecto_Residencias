@@ -64,13 +64,13 @@
 
 
             <div class="instrucciones">
-                <h2 class="instrucciones">Asignar asesor interno: Aqui se le asigna un asesor a los estudiantes</h2>
-                <h2 class="instrucciones">Asignar revisores: Aqui asignarle revisores a los estudiantes</h2>
-                <h2 class="instrucciones">Anteproyecto: Aqui podra ver los anteproyectos de todos los alumnos</h2>
-                <h2 class="instrucciones">Revision 1: Aqui podra ver la primera revisión de los residentes</h2>
-                <h2 class="instrucciones">Revision 2: Aqui podra ver la segunda revisión de los residentes</h2>
-                <h2 class="instrucciones">Revision 3: Aqui podra ver la tercera revisión de los residentes</h2>
-                <h2 class="instrucciones">Datos : Aqui podra ver los datos de los residentes, asi como su calificacion final</h2>
+                <label class="cont-instrucciones"><h5 class="bol"><i class="icon ion-md-person lead mr-2"></i>Asignar asesor interno:</h5> Aqui se le asigna un asesor a los estudiantes</label>
+                <label class="cont-instrucciones"><h5 class="bol"><i class="icon ion-md-people lead mr-2"></i>Asignar revisores:</h5> Aqui asignarle revisores a los estudiantes</label>
+                <label class="cont-instrucciones"><h5 class="bol"><i class="icon ion-md-filing lead mr-2"></i>Anteproyecto:</h5> Aqui podra ver los anteproyectos de todos los alumnos</label>
+                <label class="cont-instrucciones"><h5 class="bol"><i class="icon ion-md-book lead mr-2"></i>Revision 1:</h5> Aqui podra ver la primera revisión de los residentes</label>
+                <label class="cont-instrucciones"><h5 class="bol"><i class="icon ion-md-book lead mr-2"></i>Revision 2:</h5> Aqui podra ver la segunda revisión de los residentes</label>
+                <label class="cont-instrucciones"><h5 class="bol"><i class="icon ion-md-book lead mr-2"></i>Revision 3:</h5> Aqui podra ver la tercera revisión de los residentes</label>
+                <label class="cont-instrucciones"><h5 class="bol"><i class="icon ion-md-paper lead mr-2"></i>Datos de los alumnos:</h5> Aqui podra ver los datos de los residentes, asi como su calificacion final</label>
             </div>
 
                         </div>
