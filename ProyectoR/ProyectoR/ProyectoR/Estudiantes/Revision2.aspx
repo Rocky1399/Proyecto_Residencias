@@ -59,7 +59,7 @@
 
                 <h1 class="titulo">Sube tu documento PDF para tu segunda revisión</h1>
  <asp:FileUpload class="file" ID="FileUpload1" runat="server" /> <br />
-    <asp:Button ID="btnUpload" runat="server" Text="Subir" OnClick="Upload" class="Subir"/>
+    <asp:Button ID="btnUpload" runat="server" Text="Subir" OnClick="Upload" class="SubirA"/>
     <hr />
     <asp:GridView class="gv" ID="gvFiles" runat="server" AutoGenerateColumns="false">
         <Columns>
