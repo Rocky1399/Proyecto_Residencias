@@ -66,13 +66,13 @@
             </h1>
 
             <div>
-                <h2 class="instrucciones">Anteproyecto: Aqui podra ver los anteproyectos de los alumnos asignados</h2>
-                <h2 class="instrucciones">Revision 1: Aqui podra ver la primera revisión de sus residentes, ademas de poder calificar y comentar cada uno de los documentos</h2>
-                <h2 class="instrucciones">Revision 2: Aqui podra ver la segunda revisión de sus residentes, ademas de poder calificar y comentar cada uno de los documentos</h2>
-                <h2 class="instrucciones">Revision 3: Aqui podra ver la tercera revisión de sus residentes, ademas de poder calificar y comentar cada uno de los documentos</h2>
-                <h2 class="instrucciones">Revisor r1: Aqui podra ver la primera revisión de sus residentes asignados como revisor</h2>
-                <h2 class="instrucciones">Revisor r2: Aqui podra ver la segunda revisión de sus residentes asignados como revisor</h2>
-                <h2 class="instrucciones">Revisor r3: Aqui podra ver la tercera revisión de sus residentes asignados como revisor</h2>
+                <label class="cont-instrucciones"><h5 class="bol"><i class="icon ion-md-filing lead mr-2"></i>Anteproyecto:</h5> Aqui podra ver los anteproyectos de los alumnos asignados</label>
+                <label class="cont-instrucciones"><h5 class="bol"><i class="icon ion-md-book lead mr-2"></i>Revision 1:</h5> Aqui podra ver la primera revisión de sus residentes, ademas de poder calificar y comentar cada uno de los documentos</label>
+                <label class="cont-instrucciones"><h5 class="bol"><i class="icon ion-md-book lead mr-2"></i>Revision 2:</h5> Aqui podra ver la segunda revisión de sus residentes, ademas de poder calificar y comentar cada uno de los documentos</label>
+                <label class="cont-instrucciones"><h5 class="bol"><i class="icon ion-md-book lead mr-2"></i>Revision 3:</h5> Aqui podra ver la tercera revisión de sus residentes, ademas de poder calificar y comentar cada uno de los documentos</label>
+                <label class="cont-instrucciones"><h5 class="bol"><i class="icon ion-md-book lead mr-2"></i>Revisor r1:</h5> Aqui podra ver la primera revisión de sus residentes asignados como revisor</label>
+                <label class="cont-instrucciones"><h5 class="bol"><i class="icon ion-md-book lead mr-2"></i>Revisor r2:</h5> Aqui podra ver la segunda revisión de sus residentes asignados como revisor</label>
+                <label class="cont-instrucciones"><h5 class="bol"><i class="icon ion-md-book lead mr-2"></i>Revisor r3:</h5> Aqui podra ver la tercera revisión de sus residentes asignados como revisor</label>
             </div>
 
         </div>

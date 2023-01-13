@@ -61,12 +61,13 @@
     </h1>
 </div><br />
 
-        <h2 class="instrucciones">Proceso de solicitud de residencias: Aqui podras descargar los formatos requeridos para tu proceso de solicitud de residencias</h2>
-        <h2 class="instrucciones">Datos proyecto: En este apartado deberas de introducir los datos requeridos una unica vez antes de que comiences todo tu proceso de residencias</h2>
-        <h2 class="instrucciones">Revision 1: Aqui subiras tu primera revision de tu informe de residencias y podras ver los comentarios de tus asesores asi como su calificacion</h2>
-        <h2 class="instrucciones">Revision 2: Aqui subiras tu segunda revision de tu informe de residencias y podras ver los comentarios de tus asesores asi como su calificacion</h2>
-        <h2 class="instrucciones">Revision 3: Aqui subiras tu primera revision de tu informe de residencias y podras ver los comentarios de tus asesores asi como su calificacion</h2>
-    </div>
+            
+        <label class="cont-instrucciones"><h5 class="bol"><i class="icon ion-md-document lead mr-2"></i>Proceso de solicitud de residencias:</h5> Aqui podras descargar los formatos requeridos para tu proceso de solicitud de residencias</label>
+        <label class="cont-instrucciones"><h5 class="bol"><i class="icon ion-md-clipboard lead mr-2"></i>Datos proyecto:</h5> En este apartado deberas de introducir los datos requeridos una unica vez antes de que comiences todo tu proceso de residencias</label>
+        <label class="cont-instrucciones"><h5 class="bol"><i class="icon ion-md-book lead mr-2"></i>Revision 1:</h5> Aqui subiras tu primera revision de tu informe de residencias y podras ver los comentarios de tus asesores asi como su calificacion</label>
+        <label class="cont-instrucciones"><h5 class="bol"><i class="icon ion-md-book lead mr-2"></i>Revision 2:</h5> Aqui subiras tu segunda revision de tu informe de residencias y podras ver los comentarios de tus asesores asi como su calificacion</label>
+        <label class="cont-instrucciones"><h5 class="bol"><i class="icon ion-md-book lead mr-2"></i>Revision 3:</h5> Aqui subiras tu primera revision de tu informe de residencias y podras ver los comentarios de tus asesores asi como su calificacion</label>
+
             </form>
 </body>
 </html>
